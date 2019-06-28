@@ -5,12 +5,25 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 movementDirection;
-    //public GameObject player;
     public Rigidbody2D playerRB;
+    private bool pFacingRight;
 
-    public float movementSpeedMult = 1.0f;
-    public float movementSpeed;
-    public float sprintMult = 1.0f;
+    [Header("Player Movement Speed Settings")]
+    [Tooltip("Base movement speed for the player. Default: 5.0")]
+    [SerializeField] private float movementSpeedMult = 5.0f;
+    [Tooltip("Movement speed multiplied by this when player is sprinting. Default: 2.0")]
+    [SerializeField] private float sprintOnMult = 2.0f;
+
+    [Space]
+
+    [Header("Visible for debugging. Don't change these.")]
+    [Tooltip("Current movement speed")]
+    [SerializeField] private float movementSpeed;
+    [Tooltip("Current sprinting multiplier. Default: 1.0")]
+    [SerializeField] private float sprintMult = 1.0f;
+    [Tooltip("Multiplier when not sprinting. Default: 1.0")]
+    [SerializeField] private float sprintOffMult = 1.0f;
+    
     
     void Awake()
     {
@@ -29,22 +42,41 @@ public class PlayerController : MonoBehaviour
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1.0f);
         movementDirection.Normalize();
+
+        if (movementDirection.x > 0 && pFacingRight)
+        {
+            FlipPlayer();
+        }
+
+        else if (movementDirection.x < 0 && !pFacingRight)
+        {
+            FlipPlayer();
+        }
     }
 
     void Move()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            sprintMult = 2.0f;
+            sprintMult = sprintOnMult;
         }
 
         else
         {
-            sprintMult = 1.0f;
+            sprintMult = sprintOffMult;
         }
 
         // new Vector3(Mathf.Lerp(minimum, maximum, t), 0, 0)
 
         playerRB.velocity = movementDirection * movementSpeed * movementSpeedMult * sprintMult;
+    }
+
+    void FlipPlayer()
+    {
+        pFacingRight = !pFacingRight;
+
+        Vector3 playerScale = transform.localScale;
+        playerScale.x *= -1;
+        transform.localScale = playerScale;
     }
 }
