@@ -39,19 +39,19 @@ public class GameplayVariables : ScriptableObject
     [Space]
 
     [Header("Player stat change rates")]
-    [Tooltip("How fast coffee level changes. Default: -0.5")]
+    [Tooltip("At what rate coffee level changes. Default: -0.5")]
     public float playerCoffeeRate = -0.5f;
 
-    [Tooltip("How fast warmth level changes. Default: 0.5")]
+    [Tooltip("At what rate warmth level changes. Default: 0.5")]
     public float playerWarmthRate = 0.5f;
 
-    [Tooltip("How fast mosquito level changes. Default: 0.5")]
+    [Tooltip("At what rate mosquito level changes. Default: 0.5")]
     public float playerMosquitoesRate = 0.5f;
 
-    [Tooltip("How fast hunger level changes. Default: -0.5")]
+    [Tooltip("At what rate hunger level changes. Default: -0.5")]
     public float playerHungerRate = -0.5f;
 
-    [Tooltip("How fast thirst level changes. Default: -0.5")]
+    [Tooltip("At what rate thirst level changes. Default: -0.5")]
     public float playerThirstRate = -0.5f;
 
 
