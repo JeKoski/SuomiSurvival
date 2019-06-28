@@ -7,20 +7,30 @@ public class PlayerController : MonoBehaviour
     public Vector2 movementDirection;
     public Rigidbody2D playerRB;
     private bool pFacingRight;
+    private GameplayVariables gpv;
 
     [Header("Player Movement Speed Settings")]
+
     [Tooltip("Base movement speed for the player. Default: 5.0")]
     [SerializeField] private float movementSpeedMult = 5.0f;
+
     [Tooltip("Movement speed multiplied by this when player is sprinting. Default: 2.0")]
     [SerializeField] private float sprintOnMult = 2.0f;
+
+    //[Tooltip("Speed multiplier when coffee is out")]
+    //[SerializeField] private float coffeeOutSpeedMult = 0.5f;
+    //private float coffeeOutSpeedMultDefault = 0.5f;
 
     [Space]
 
     [Header("Visible for debugging. Don't change these.")]
+
     [Tooltip("Current movement speed")]
     [SerializeField] private float movementSpeed;
+
     [Tooltip("Current sprinting multiplier. Default: 1.0")]
     [SerializeField] private float sprintMult = 1.0f;
+
     [Tooltip("Multiplier when not sprinting. Default: 1.0")]
     [SerializeField] private float sprintOffMult = 1.0f;
     
@@ -65,8 +75,6 @@ public class PlayerController : MonoBehaviour
         {
             sprintMult = sprintOffMult;
         }
-
-        // new Vector3(Mathf.Lerp(minimum, maximum, t), 0, 0)
 
         playerRB.velocity = movementDirection * movementSpeed * movementSpeedMult * sprintMult;
     }

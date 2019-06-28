@@ -8,33 +8,42 @@ public class GameplayVariables : ScriptableObject
     [Header("Player stats")]
     [Range(0.0f, 100.0f)]
     public float playerHealth;
-    [Range(0.0f, 100.0f)]
-    private float playerHealthDefault = 100.0f;
 
     [Range(0.0f, 100.0f)]
     public float playerCoffee;
-    [Range(0.0f, 100.0f)]
-    private float playerCoffeeDefault = 50.0f;
 
     [Range(-100.0f, 100.0f)]
     public float playerWarmth;
-    [Range(-100.0f, 100.0f)]
-    private float playerWarmthDefault = 0.0f;
 
     [Range(0.0f, 100.0f)]
     public float playerMosquitoes;
-    [Range(0.0f, 100.0f)]
-    private float playerMosquitoesDefault = 0.0f;
 
     [Range(0.0f, 100.0f)]
     public float playerHunger;
-    [Range(0.0f, 100.0f)]
-    private float playerHungerDefault = 100.0f;
 
     [Range(0.0f, 100.0f)]
     public float playerThirst;
+
+    [Space]
+
+    [Header("Default Starting Values.")]
     [Range(0.0f, 100.0f)]
-    private float playerThirstDefault = 100.0f;
+    [SerializeField] private float playerHealthDefault = 100.0f;
+
+    [Range(0.0f, 100.0f)]
+    [SerializeField] private float playerCoffeeDefault = 50.0f;
+
+    [Range(-100.0f, 100.0f)]
+    [SerializeField] private float playerWarmthDefault = 0.0f;
+
+    [Range(0.0f, 100.0f)]
+    [SerializeField] private float playerMosquitoesDefault = 0.0f;
+
+    [Range(0.0f, 100.0f)]
+    [SerializeField] private float playerHungerDefault = 100.0f;
+
+    [Range(0.0f, 100.0f)]
+    [SerializeField] private float playerThirstDefault = 100.0f;
 
     [Space]
 
