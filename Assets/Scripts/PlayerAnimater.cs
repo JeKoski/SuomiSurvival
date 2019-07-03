@@ -15,7 +15,13 @@ public class PlayerAnimater : MonoBehaviour
 
     void Animate()
     {
+        if (playerController.movementDirection != Vector2.zero)
+        {
         animator.SetFloat("Horizontal", playerController.movementDirection.x);
         animator.SetFloat("Vertical", playerController.movementDirection.y);
+
+        }
+        
+        animator.SetFloat("Speed", playerController.movementSpeed);
     }
 }

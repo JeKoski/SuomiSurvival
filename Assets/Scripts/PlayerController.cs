@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Visible for debugging. Don't change these.")]
 
     [Tooltip("Current movement speed")]
-    [SerializeField] private float movementSpeed;
+    public float movementSpeed;
 
     [Tooltip("Current sprinting multiplier. Default: 1.0")]
     [SerializeField] private float sprintMult = 1.0f;
