@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: GameplayVariables
   m_EditorClassIdentifier: 
   playerHealth: 100
-  playerCoffee: 23.14051
-  playerWarmth: 32.63531
-  playerMosquitoes: 0
-  playerHunger: 62.489178
-  playerThirst: 60.65718
+  playerCoffee: 45.972183
+  playerWarmth: 4.0283737
+  playerMosquitoes: 4.0283737
+  playerHunger: 95.97215
+  playerThirst: 95.97215
   playerHealthDefault: 100
   playerCoffeeDefault: 50
   playerWarmthDefault: 0
@@ -27,5 +27,6 @@ MonoBehaviour:
   playerCoffeeRate: -0.5
   playerWarmthRate: 0.5
   playerMosquitoesRate: 5
+  playerMosquitoesDecayRate: -0.5
   playerHungerRate: -0.5
   playerThirstRate: -0.5

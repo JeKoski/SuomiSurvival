@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 movementDirection;
     public Rigidbody2D playerRB;
     private bool pFacingRight;
-    private GameplayVariables gpv;
+    public GameplayVariables gpv;
 
     [Header("Player Movement Speed Settings")]
 
@@ -53,15 +53,15 @@ public class PlayerController : MonoBehaviour
         movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1.0f);
         movementDirection.Normalize();
 
-        if (movementDirection.x > 0 && pFacingRight)
-        {
-            FlipPlayer();
-        }
+        //if (movementDirection.x > 0 && pFacingRight)
+        //{
+        //    FlipPlayer();
+        //}
 
-        else if (movementDirection.x < 0 && !pFacingRight)
-        {
-            FlipPlayer();
-        }
+        //else if (movementDirection.x < 0 && !pFacingRight)
+        //{
+        //    FlipPlayer();
+        //}
     }
 
     void Move()

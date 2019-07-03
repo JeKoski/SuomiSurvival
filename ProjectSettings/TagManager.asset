@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MosquitoField
+  - SaweTrigger
   layers:
   - Default
   - TransparentFX
@@ -61,4 +63,7 @@ TagManager:
     locked: 0
   - name: OverPlayer
     uniqueID: 65726337
+    locked: 0
+  - name: OverPlayerBuilding
+    uniqueID: 1681051489
     locked: 0

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class MeterController : MonoBehaviour
 {
     [Header("References:")]
-    [SerializeField] private GameplayVariables gpv;
-    [SerializeField] private Slider healthMeter;
-    [SerializeField] private Slider coffeeMeter;
-    [SerializeField] private Slider warmthMeter;
-    [SerializeField] private Slider mosquitoesMeter;
-    [SerializeField] private Slider hungerMeter;
-    [SerializeField] private Slider thirstMeter;
+    public GameplayVariables gpv;
+    public Slider healthMeter;
+    public Slider coffeeMeter;
+    public Slider warmthMeter;
+    public Slider mosquitoesMeter;
+    public Slider hungerMeter;
+    public Slider thirstMeter;
     
     void Update()
     {

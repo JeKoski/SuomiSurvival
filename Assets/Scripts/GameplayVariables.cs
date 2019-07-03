@@ -54,8 +54,11 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("At what rate warmth level changes. Default: 0.5")]
     public float playerWarmthRate = 0.5f;
 
-    [Tooltip("At what rate mosquito level changes. Default: 0.5")]
+    [Tooltip("At what rate mosquito level increases when in field. Default: 0.5")]
     public float playerMosquitoesRate = 0.5f;
+
+    [Tooltip("At what rate mosquito level decays")]
+    public float playerMosquitoesDecayRate = -0.5f;
 
     [Tooltip("At what rate hunger level changes. Default: -0.5")]
     public float playerHungerRate = -0.5f;
