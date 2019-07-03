@@ -54,6 +54,9 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("At what rate warmth level changes. Default: 0.5")]
     public float playerWarmthRate = 0.5f;
 
+    [Tooltip("At what rate player loses warmth when in water. Default: -3.0")]
+    public float playerWaterCoolingRate = -3.0f;
+
     [Tooltip("At what rate mosquito level increases when in field. Default: 0.5")]
     public float playerMosquitoesRate = 0.5f;
 
