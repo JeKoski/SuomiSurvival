@@ -6,6 +6,10 @@ TagManager:
   tags:
   - MosquitoField
   - SaweTrigger
+  - CabbinTrigger
+  - LoggingPlaceTrigger
+  - WaterTrigger
+  - DarkTree
   layers:
   - Default
   - TransparentFX
@@ -23,6 +27,7 @@ TagManager:
   - 
   - 
   - Trees
+  - Cabbin
   - 
   - 
   - 
@@ -37,8 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - DarkTree
   m_SortingLayers:
   - name: Default
     uniqueID: 0
