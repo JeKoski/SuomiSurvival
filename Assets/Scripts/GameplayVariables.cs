@@ -54,6 +54,9 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("At what rate warmth level changes. Default: 0.5")]
     public float playerWarmthRate = 0.5f;
 
+    [Tooltip("At what rate warmth level increases in Sauna. Default: 5.0")]
+    public float playerWarmthSaunaRate = 5.0f;
+
     [Tooltip("At what rate player loses warmth when in water. Default: -3.0")]
     public float playerWaterCoolingRate = -3.0f;
 

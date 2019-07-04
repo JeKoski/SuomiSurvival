@@ -14,7 +14,7 @@ public class StoreController : MonoBehaviour
         // When cliking on Beer
     }
 
-    private void ExitSawe()
+    private void ExitStore()
     {
         // When clicking Exit store
     }

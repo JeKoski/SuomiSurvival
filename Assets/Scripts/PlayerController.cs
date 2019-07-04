@@ -79,12 +79,12 @@ public class PlayerController : MonoBehaviour
         playerRB.velocity = movementDirection * movementSpeed * movementSpeedMult * sprintMult;
     }
 
-    void FlipPlayer()
-    {
-        pFacingRight = !pFacingRight;
+    //void FlipPlayer()
+    //{
+    //    pFacingRight = !pFacingRight;
 
-        Vector3 playerScale = transform.localScale;
-        playerScale.x *= -1;
-        transform.localScale = playerScale;
-    }
+    //    Vector3 playerScale = transform.localScale;
+    //    playerScale.x *= -1;
+    //    transform.localScale = playerScale;
+    //}
 }
