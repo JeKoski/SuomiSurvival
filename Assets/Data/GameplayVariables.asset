@@ -12,21 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f3a92f067eec94b891bd61d4ca76e5, type: 3}
   m_Name: GameplayVariables
   m_EditorClassIdentifier: 
+  timeOfDay: 992.78217
+  timeScale: 1
   playerHealth: 100
-  playerCoffee: 45.972183
-  playerWarmth: 4.0283737
-  playerMosquitoes: 4.0283737
-  playerHunger: 95.97215
-  playerThirst: 95.97215
+  playerCoffee: 46.390484
+  playerWarmth: 3.6092808
+  playerMosquitoes: 0
+  playerHunger: 96.39115
+  playerThirst: 96.39115
   playerHealthDefault: 100
   playerCoffeeDefault: 50
   playerWarmthDefault: 0
   playerMosquitoesDefault: 0
   playerHungerDefault: 100
   playerThirstDefault: 100
+  timeOfDayDefault: 1000
   playerCoffeeRate: -0.5
   playerWarmthRate: 0.5
+  playerWarmthSaunaRate: 5
+  playerWaterCoolingRate: -3
   playerMosquitoesRate: 5
   playerMosquitoesDecayRate: -0.5
   playerHungerRate: -0.5
   playerThirstRate: -0.5
+  inputsDisabled: 0

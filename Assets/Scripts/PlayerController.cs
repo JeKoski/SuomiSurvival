@@ -43,8 +43,9 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        ProcessInputs();
-        Move();
+        MoveWithDisableCheck();
+        //ProcessInputs();
+        //Move();
     }
 
     void ProcessInputs()
@@ -77,6 +78,20 @@ public class PlayerController : MonoBehaviour
         }
 
         playerRB.velocity = movementDirection * movementSpeed * movementSpeedMult * sprintMult;
+    }
+
+    void MoveWithDisableCheck()
+    {
+        if (!gpv.inputsDisabled)
+        {
+            ProcessInputs();
+            Move();
+        }
+
+        else if (gpv.inputsDisabled)
+        {
+            playerRB.velocity = new Vector2(0,0);
+        }
     }
 
     //void FlipPlayer()

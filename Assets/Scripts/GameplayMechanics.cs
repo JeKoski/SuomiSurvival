@@ -5,18 +5,21 @@ using UnityEngine;
 public class GameplayMechanics : MonoBehaviour
 {
     [Header("References:")]
+    [Tooltip("GameplayVariables Data Package")]
     public GameplayVariables gpv;
-    public GameObject player;
+    private GameObject player;
+    [Tooltip("GameObject to disable when player walks into the cabbin")]
     public GameObject cabbinRoof;
     public GameObject playerStoreMarker;
     public static Vector2 playerStoreLocation;
-    public GameObject playerInStoreTrigger;
+    private GameObject playerInStoreTrigger;
 
     [Space]
 
     [Header("Functional Checks:")]
     [Tooltip("Is the sauna on?")]
     public bool saunaOn = false;
+    public bool campfireBuilt = false;
     public bool playerInMosquitoField = false;
     public bool playerInWater = false;
     public bool playerInSauna = false;
@@ -27,6 +30,25 @@ public class GameplayMechanics : MonoBehaviour
     public bool playerInFridge = false;
     public bool playerInFireplace = false;
 
+    [Space]
+
+    [Header("Action variables")]
+    public int firewoodRequiredForSauna = 3;
+    public float saunaOnProgress = 0.0f;
+    public float saunaOnProgressRate = 30.0f;
+    public int firewoodRequiredForCampfire = 5;
+    public float campfireBuildProgress = 0.0f;
+    public float campfireBuildProgressRate = 30.0f;
+    public float chopWoodProgress = 0.0f;
+    public float chopWoodProgressRate = 20.0f;
+    public int playerFirewood = 0;
+
+    [Space]
+
+    [Header("dunno lol")]
+    [SerializeField] private float inputDelay = 1.0f;
+    [SerializeField] private float inputDelayTimer = 0.0f;
+    //private bool 
 
     void Start()
     {
@@ -39,7 +61,19 @@ public class GameplayMechanics : MonoBehaviour
     
     void Update()
     {
+        // Update thingies
+        GameTimeUpdate();
         PlayerStatsUpdate();
+
+        // Actions
+        BuildCampfire();
+        FireUpSauna();
+        ChopWood();
+    }
+
+    void GameTimeUpdate()
+    {
+        gpv.timeOfDay = gpv.timeOfDay - Time.deltaTime * gpv.timeScale;
     }
 
     void PlayerStatsUpdate()
@@ -95,6 +129,11 @@ public class GameplayMechanics : MonoBehaviour
                 gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
             }
         }
+
+        //if (other.gameObject.tag == "PlayerInStoreTrigger")
+        //{
+        //    DisableInputsForABit();
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -232,6 +271,68 @@ public class GameplayMechanics : MonoBehaviour
             Debug.Log("You've left the fireplace trigger");
             // Close menu for fireplace?
             playerInFireplace = false;
+        }
+    }
+
+    public void DisableInputsForABit()
+    {
+        gpv.inputsDisabled = true;
+
+        inputDelayTimer = inputDelayTimer + Time.deltaTime;
+
+        if (inputDelayTimer > inputDelay)
+        {
+            gpv.inputsDisabled = false;
+            inputDelayTimer = 0;
+        }
+    }
+
+    private void BuildCampfire()
+    {
+        if (playerInFireplace && !campfireBuilt && Input.GetKey(KeyCode.E) && playerFirewood >= firewoodRequiredForCampfire)
+        {
+            campfireBuildProgress = campfireBuildProgress + (Time.deltaTime * campfireBuildProgressRate);
+
+            if (campfireBuildProgress >= 100.0f)
+            {
+                campfireBuilt = true;
+                campfireBuildProgress = 0.0f;
+                playerFirewood = playerFirewood - firewoodRequiredForCampfire;
+            }
+        }
+    }
+
+    private void ChopWood()
+    {
+        if (playerInLogging && Input.GetKey(KeyCode.E))
+        {
+            chopWoodProgress = chopWoodProgress + (Time.deltaTime * chopWoodProgressRate);
+
+            if (chopWoodProgress >= 100.0f)
+            {
+                playerFirewood++;
+                chopWoodProgress = 0;
+            }
+        }
+
+        if (!playerInLogging)
+        {
+            chopWoodProgress = 0.0f;
+        }
+    }
+
+    private void FireUpSauna()
+    {
+        if (playerInSauna && !saunaOn && Input.GetKey(KeyCode.E) && playerFirewood >= firewoodRequiredForSauna)
+        {
+            saunaOnProgress = saunaOnProgress + (Time.deltaTime * saunaOnProgressRate);
+
+            if (saunaOnProgress >= 100.0f)
+            {
+                saunaOn = true;
+                saunaOnProgress = 0.0f;
+                playerFirewood = playerFirewood - firewoodRequiredForSauna;
+            }
         }
     }
 }

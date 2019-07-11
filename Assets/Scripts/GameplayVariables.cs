@@ -5,6 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameplayVariables", menuName = "SuomiSurvival/GameplayVariables")]
 public class GameplayVariables : ScriptableObject
 {
+    [Header("Game World things")]
+    [Range(0.0f, 1000.0f)]
+    public float timeOfDay = 1000.0f;
+
+    public float timeScale = 1.0f;
+
+    [Space]
+
     [Header("Player stats")]
     [Range(0.0f, 100.0f)]
     public float playerHealth;
@@ -45,6 +53,9 @@ public class GameplayVariables : ScriptableObject
     [Range(0.0f, 100.0f)]
     [SerializeField] private float playerThirstDefault = 100.0f;
 
+    [Range(0.0f, 1000.0f)]
+    [SerializeField] private float timeOfDayDefault = 1000.0f;
+
     [Space]
 
     [Header("Player stat change rates")]
@@ -72,10 +83,17 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("At what rate thirst level changes. Default: -0.5")]
     public float playerThirstRate = -0.5f;
 
+    [Space]
 
+    [Header("Misc.")]
+    [Tooltip("When true, player can't move.")]
+    public bool inputsDisabled = false;
 
     public void ResetAll()
     {
+        timeOfDay = timeOfDayDefault;
+        inputsDisabled = false;
+
         playerHealth = playerHealthDefault;
         playerCoffee = playerCoffeeDefault;
         playerWarmth = playerWarmthDefault;

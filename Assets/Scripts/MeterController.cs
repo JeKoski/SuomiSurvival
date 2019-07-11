@@ -13,6 +13,7 @@ public class MeterController : MonoBehaviour
     public Slider mosquitoesMeter;
     public Slider hungerMeter;
     public Slider thirstMeter;
+    public Slider timeMeter;
     
     void Update()
     {
@@ -27,5 +28,6 @@ public class MeterController : MonoBehaviour
         mosquitoesMeter.value = gpv.playerMosquitoes;
         hungerMeter.value = gpv.playerHunger;
         thirstMeter.value = gpv.playerThirst;
+        timeMeter.value = gpv.timeOfDay;
     }
 }
