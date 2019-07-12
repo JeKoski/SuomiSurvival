@@ -41,14 +41,13 @@ public class GameplayMechanics : MonoBehaviour
     public float campfireBuildProgressRate = 30.0f;
     public float chopWoodProgress = 0.0f;
     public float chopWoodProgressRate = 20.0f;
-    public int playerFirewood = 0;
 
     [Space]
 
     [Header("dunno lol")]
     [SerializeField] private float inputDelay = 1.0f;
     [SerializeField] private float inputDelayTimer = 0.0f;
-    //private bool 
+    private bool freezePlayer = false;
 
     void Start()
     {
@@ -69,6 +68,9 @@ public class GameplayMechanics : MonoBehaviour
         BuildCampfire();
         FireUpSauna();
         ChopWood();
+
+        // System things
+        DisableInputsForABit();
     }
 
     void GameTimeUpdate()
@@ -129,11 +131,6 @@ public class GameplayMechanics : MonoBehaviour
                 gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
             }
         }
-
-        //if (other.gameObject.tag == "PlayerInStoreTrigger")
-        //{
-        //    DisableInputsForABit();
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -169,6 +166,8 @@ public class GameplayMechanics : MonoBehaviour
         if (other.gameObject.tag == "PlayerInStoreTrigger")
         {
             playerInStore = true;
+
+            freezePlayer = true;
         }
 
         if (other.gameObject.tag == "CabbinTrigger")
@@ -276,20 +275,24 @@ public class GameplayMechanics : MonoBehaviour
 
     public void DisableInputsForABit()
     {
-        gpv.inputsDisabled = true;
-
-        inputDelayTimer = inputDelayTimer + Time.deltaTime;
-
-        if (inputDelayTimer > inputDelay)
+        if (freezePlayer)
         {
-            gpv.inputsDisabled = false;
-            inputDelayTimer = 0;
+            gpv.inputsDisabled = true;
+
+            inputDelayTimer = inputDelayTimer + Time.deltaTime;
+
+            if (inputDelayTimer > inputDelay)
+            {
+                gpv.inputsDisabled = false;
+                freezePlayer = false;
+                inputDelayTimer = 0;
+            }
         }
     }
 
     private void BuildCampfire()
     {
-        if (playerInFireplace && !campfireBuilt && Input.GetKey(KeyCode.E) && playerFirewood >= firewoodRequiredForCampfire)
+        if (playerInFireplace && !campfireBuilt && Input.GetKey(KeyCode.E) && gpv.playerFirewood >= firewoodRequiredForCampfire)
         {
             campfireBuildProgress = campfireBuildProgress + (Time.deltaTime * campfireBuildProgressRate);
 
@@ -297,7 +300,7 @@ public class GameplayMechanics : MonoBehaviour
             {
                 campfireBuilt = true;
                 campfireBuildProgress = 0.0f;
-                playerFirewood = playerFirewood - firewoodRequiredForCampfire;
+                gpv.playerFirewood = gpv.playerFirewood - firewoodRequiredForCampfire;
             }
         }
     }
@@ -310,7 +313,7 @@ public class GameplayMechanics : MonoBehaviour
 
             if (chopWoodProgress >= 100.0f)
             {
-                playerFirewood++;
+                gpv.playerFirewood++;
                 chopWoodProgress = 0;
             }
         }
@@ -323,7 +326,7 @@ public class GameplayMechanics : MonoBehaviour
 
     private void FireUpSauna()
     {
-        if (playerInSauna && !saunaOn && Input.GetKey(KeyCode.E) && playerFirewood >= firewoodRequiredForSauna)
+        if (playerInSauna && !saunaOn && Input.GetKey(KeyCode.E) && gpv.playerFirewood >= firewoodRequiredForSauna)
         {
             saunaOnProgress = saunaOnProgress + (Time.deltaTime * saunaOnProgressRate);
 
@@ -331,7 +334,7 @@ public class GameplayMechanics : MonoBehaviour
             {
                 saunaOn = true;
                 saunaOnProgress = 0.0f;
-                playerFirewood = playerFirewood - firewoodRequiredForSauna;
+                gpv.playerFirewood = gpv.playerFirewood - firewoodRequiredForSauna;
             }
         }
     }
