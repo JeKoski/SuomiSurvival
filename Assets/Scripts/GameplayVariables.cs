@@ -47,6 +47,14 @@ public class GameplayVariables : ScriptableObject
 
     [Space]
 
+    [Header("Fridge Items")]
+
+    public int fridgeSausageCount;
+    public int fridgeWarmBeerCount;
+    public int fridgeColdBeerCount;
+
+    [Space]
+
     [Header("Item Costs")]
 
     public float sausageCost;
@@ -130,6 +138,18 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("At what rate thirst level changes. Default: -0.5")]
     public float playerThirstRate = -0.5f;
 
+    [Tooltip("How much hunger a uncooked sausage restores")]
+    public float coldSausageRestoreAmount = 10.0f;
+
+    [Tooltip("How much hunger a cooked sausage restores")]
+    public float cookedSausageRestoreAmount = 50.0f;
+
+    [Tooltip("How much thirst a warm beer restores")]
+    public float warmBeerRestoreAmount = 10.0f;
+
+    [Tooltip("How much thirst a cold beer restores")]
+    public float coldBeerRestoreAmount = 50.0f;
+
     [Space]
 
     [Header("Misc.")]
@@ -147,6 +167,10 @@ public class GameplayVariables : ScriptableObject
         playerBeer = playerBeerDefault;
         playerCoffeeCups = playerCoffeeCupsDefault;
         playerRepellent = playerRepellentDefault;
+
+        fridgeSausageCount = 0;
+        fridgeWarmBeerCount = 0;
+        fridgeColdBeerCount = 0;
 
         sausageCost = sausageCostDefault;
         beerCost = beerCostDefault;
