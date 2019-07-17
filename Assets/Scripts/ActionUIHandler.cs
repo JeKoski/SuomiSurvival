@@ -50,7 +50,12 @@ public class ActionUIHandler : MonoBehaviour
     [SerializeField] private GameObject storeUI;
     private Vector2 storeUIShow = new Vector2(0.0f, 0.0f);
     private Vector2 storeUIHide = new Vector2(0.0f, -1500.0f);
-    private bool storeUIIsAway = false;
+    private bool storeUIIsAway = true;
+
+    [SerializeField] private GameObject fridgeUI;
+    private Vector2 fridgeUIShow = new Vector2(0.0f, 0.0f);
+    private Vector2 fridgeUIHide = new Vector2(-1000.0f, -1500.0f);
+    private bool fridgeUIIsAway = true;
 
 
     private void Update()
@@ -122,6 +127,16 @@ public class ActionUIHandler : MonoBehaviour
         else if (!gpm.playerInStore)
         {
             HideStoreUI();
+        }
+
+        if (gpm.playerInFridge)
+        {
+            ShowFridgeUI();
+        }
+
+        else if (!gpm.playerInFridge)
+        {
+            HideFridgeUI();
         }
 
         UpdateProgressBars();
@@ -219,5 +234,15 @@ public class ActionUIHandler : MonoBehaviour
     private void HideStoreUI()
     {
         storeUI.transform.localPosition = storeUIHide;
+    }
+
+    private void HideFridgeUI()
+    {
+        fridgeUI.transform.localPosition = fridgeUIHide;
+    }
+
+    private void ShowFridgeUI()
+    {
+        fridgeUI.transform.localPosition = fridgeUIShow;
     }
 }

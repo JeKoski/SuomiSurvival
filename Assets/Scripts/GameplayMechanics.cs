@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayMechanics : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameplayMechanics : MonoBehaviour
     public bool playerInTable = false;
     public bool playerInFridge = false;
     public bool playerInFireplace = false;
+    public bool playerDead = false;
 
     [Space]
 
@@ -44,6 +46,20 @@ public class GameplayMechanics : MonoBehaviour
 
     [Space]
 
+    [Header("Night Time Overlay stuff")]
+
+    [SerializeField] private GameObject nightTimeOverlay;
+    [SerializeField] private SpriteRenderer nightTimeSprite;
+    [SerializeField] private Color nightTimeColor = new Color(15, 0, 50);
+    [SerializeField] private float nightTimeOverlayAlpha;
+    [SerializeField] private float nightTimeTargetAlpha;
+    [SerializeField] private float nightTimeGradMax = 1.0f;
+    [SerializeField] private float nightTimeGradMin = 0.0f;
+    [SerializeField] private float nightTimeGradOffset = 0.2f;
+    [SerializeField] private float nightTimeColorBlendTime = 5.0f;
+
+    [Space]
+
     [Header("dunno lol")]
     [SerializeField] private float inputDelay = 1.0f;
     [SerializeField] private float inputDelayTimer = 0.0f;
@@ -56,6 +72,8 @@ public class GameplayMechanics : MonoBehaviour
         playerInStoreTrigger = GameObject.FindWithTag("PlayerInStoreTrigger");
         playerInStoreTrigger.SetActive(false);
         gpv.ResetAll();
+
+        nightTimeColor.a = nightTimeGradMax;
     }
     
     void Update()
@@ -63,6 +81,7 @@ public class GameplayMechanics : MonoBehaviour
         // Update thingies
         GameTimeUpdate();
         PlayerStatsUpdate();
+        NightOverlayUpdater();
 
         // Actions
         BuildCampfire();
@@ -75,7 +94,31 @@ public class GameplayMechanics : MonoBehaviour
 
     void GameTimeUpdate()
     {
-        gpv.timeOfDay = gpv.timeOfDay - Time.deltaTime * gpv.timeScale;
+        if (gpv.timeOfDay > 0)
+        {
+            gpv.timeOfDay = gpv.timeOfDay - Time.deltaTime * gpv.timeScale;
+        }
+    }
+
+    void NightOverlayUpdater()
+    {
+        if (gpv.timeOfDay < 500.0f)
+        {
+            nightTimeTargetAlpha = nightTimeGradMax - (gpv.timeOfDay / 1000.0f * (nightTimeGradMax - nightTimeGradMin) + nightTimeGradOffset);
+        }
+
+        if (!playerDead)
+        {
+            nightTimeColor.a = nightTimeTargetAlpha;
+        }
+
+        else if (playerDead)
+        {
+            nightTimeTargetAlpha = 1f;
+        }
+
+        Mathf.Clamp(nightTimeTargetAlpha, 0.0f, 1.0f);
+        nightTimeSprite.color = Color.Lerp(nightTimeSprite.color, nightTimeColor, Time.deltaTime * nightTimeColorBlendTime);
     }
 
     void PlayerStatsUpdate()
@@ -313,7 +356,7 @@ public class GameplayMechanics : MonoBehaviour
 
             if (chopWoodProgress >= 100.0f)
             {
-                gpv.playerFirewood++;
+                gpv.playerFirewood = gpv.playerFirewood + 2;
                 chopWoodProgress = 0;
             }
         }
