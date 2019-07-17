@@ -7,13 +7,19 @@ using TMPro;
 public class ActionUIHandler : MonoBehaviour
 {
     [SerializeField] private GameplayMechanics gpm;
+    [SerializeField] private GameplayVariables gpv;
     private bool campfireBuilt = false;
 
     public Slider woodChoppingBar;
     public Slider buildCampfireBar;
     public Slider saunaOnBar;
 
-    public GameObject firewoodCount;
+    [SerializeField] private GameObject playerMoneyCount;
+    [SerializeField] private GameObject firewoodCount;
+    [SerializeField] private GameObject sausageCount;
+    [SerializeField] private GameObject beerCount;
+    [SerializeField] private GameObject coffeeCount;
+    [SerializeField] private GameObject repellentCount;
 
     [SerializeField] GameObject woodChoppingUI;
     private Vector2 woodChoppingShow = new Vector2(0.0f, -200.0f);
@@ -40,6 +46,11 @@ public class ActionUIHandler : MonoBehaviour
     private Vector2 saunaInfoAway = new Vector2(400.0f, 850.0f);
     private bool saunaInfoIsAway = true;
     private bool saunaCheck = false;
+
+    [SerializeField] private GameObject storeUI;
+    private Vector2 storeUIShow = new Vector2(0.0f, 0.0f);
+    private Vector2 storeUIHide = new Vector2(0.0f, -1500.0f);
+    private bool storeUIIsAway = false;
 
 
     private void Update()
@@ -103,6 +114,16 @@ public class ActionUIHandler : MonoBehaviour
             saunaCheck = true;
         }
 
+        if (gpm.playerInStore)
+        {
+            ShowStoreUI();
+        }
+
+        else if (!gpm.playerInStore)
+        {
+            HideStoreUI();
+        }
+
         UpdateProgressBars();
         UpdateResourceUI();
     }
@@ -116,7 +137,13 @@ public class ActionUIHandler : MonoBehaviour
 
     public void UpdateResourceUI()
     {
-        firewoodCount.GetComponent<TextMeshProUGUI>().text = "X " + gpm.playerFirewood;
+        gpv.playerMoney = System.Math.Round(gpv.playerMoney, 2);
+        playerMoneyCount.GetComponent<TextMeshProUGUI>().text = gpv.playerMoney + " €";
+        firewoodCount.GetComponent<TextMeshProUGUI>().text = "X " + gpv.playerFirewood;
+        sausageCount.GetComponent<TextMeshProUGUI>().text = "X " + gpv.playerSausages;
+        beerCount.GetComponent<TextMeshProUGUI>().text = "X " + gpv.playerBeer;
+        coffeeCount.GetComponent<TextMeshProUGUI>().text = "X " + gpv.playerCoffeeCups;
+        repellentCount.GetComponent<TextMeshProUGUI>().text = "X " + gpv.playerRepellent;
     }
 
     public void MoveWoodChoppingWindow()
@@ -182,5 +209,15 @@ public class ActionUIHandler : MonoBehaviour
     private void HideSaunaInfo()
     {
         saunaInfoText.transform.localPosition = saunaInfoAway;
+    }
+
+    private void ShowStoreUI()
+    {
+        storeUI.transform.localPosition = storeUIShow;
+    }
+
+    private void HideStoreUI()
+    {
+        storeUI.transform.localPosition = storeUIHide;
     }
 }

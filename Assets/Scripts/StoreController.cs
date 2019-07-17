@@ -4,17 +4,45 @@ using UnityEngine;
 
 public class StoreController : MonoBehaviour
 {
-    private void BuyFood()
+    [SerializeField] GameplayVariables gpv;
+
+    public void BuySausage()
     {
-        // When clicking on Makkara
+        if (gpv.playerMoney >= gpv.sausageCost)
+        {
+            gpv.playerSausages++;
+            gpv.playerMoney = gpv.playerMoney - gpv.sausageCost;
+        }
     }
 
-    private void BuyDrink()
+    public void BuyBeer()
     {
-        // When cliking on Beer
+        if (gpv.playerMoney >= gpv.beerCost)
+        {
+            gpv.playerBeer++;
+            gpv.playerMoney = gpv.playerMoney - gpv.beerCost;
+        }
     }
 
-    private void ExitStore()
+    public void BuyCoffee()
+    {
+        if (gpv.playerMoney >= gpv.coffeeCost)
+        {
+            gpv.playerCoffeeCups++;
+            gpv.playerMoney = gpv.playerMoney - gpv.coffeeCost;
+        }
+    }
+
+    public void BuyRepellent()
+    {
+        if (gpv.playerMoney >= gpv.repellentCost)
+        {
+            gpv.playerRepellent++;
+            gpv.playerMoney = gpv.playerMoney - gpv.repellentCost;
+        }
+    }
+
+    public void ExitStore()
     {
         // When clicking Exit store
     }

@@ -7,8 +7,10 @@ public class GameplayVariables : ScriptableObject
 {
     [Header("Game World things")]
     [Range(0.0f, 1000.0f)]
+    [Tooltip("How much time is left till the day is over")]
     public float timeOfDay = 1000.0f;
 
+    [Tooltip("How fast time advances/drains")]
     public float timeScale = 1.0f;
 
     [Space]
@@ -34,7 +36,52 @@ public class GameplayVariables : ScriptableObject
 
     [Space]
 
+    [Header("Player Items")]
+
+    public double playerMoney;
+    public int playerFirewood;
+    public int playerSausages;
+    public int playerBeer;
+    public int playerCoffeeCups;
+    public int playerRepellent;
+
+    [Space]
+
+    [Header("Item Costs")]
+
+    public float sausageCost;
+    public float beerCost;
+    public float coffeeCost;
+    public float repellentCost;
+
+    [Space]
+
     [Header("Default Starting Values.")]
+
+    [SerializeField] private float playerMoneyDefault = 20.0f;
+
+    [SerializeField] private int playerFirewoodDefault = 0;
+
+    [SerializeField] private int playerSausagesDefault = 0;
+
+    [SerializeField] private int playerBeerDefault = 0;
+
+    [SerializeField] private int playerCoffeeCupsDefault = 0;
+
+    [SerializeField] private int playerRepellentDefault = 0;
+
+
+
+    [SerializeField] private float sausageCostDefault = 3.0f;
+
+    [SerializeField] private float beerCostDefault = 3.0f;
+
+    [SerializeField] private float coffeeCostDefault = 3.0f;
+
+    [SerializeField] private float repellentCostDefault = 3.0f;
+
+
+
     [Range(0.0f, 100.0f)]
     [SerializeField] private float playerHealthDefault = 100.0f;
 
@@ -93,6 +140,18 @@ public class GameplayVariables : ScriptableObject
     {
         timeOfDay = timeOfDayDefault;
         inputsDisabled = false;
+
+        playerMoney = playerMoneyDefault;
+        playerFirewood = playerFirewoodDefault;
+        playerSausages = playerSausagesDefault;
+        playerBeer = playerBeerDefault;
+        playerCoffeeCups = playerCoffeeCupsDefault;
+        playerRepellent = playerRepellentDefault;
+
+        sausageCost = sausageCostDefault;
+        beerCost = beerCostDefault;
+        coffeeCost = coffeeCostDefault;
+        repellentCost = repellentCostDefault;
 
         playerHealth = playerHealthDefault;
         playerCoffee = playerCoffeeDefault;
