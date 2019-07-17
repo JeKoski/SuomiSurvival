@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 3897011429516148365}
   - component: {fileID: 3897011429516148366}
   - component: {fileID: 5446991549998854783}
+  - component: {fileID: 3132946185089222109}
   m_Layer: 0
   m_Name: Stump
   m_TagString: Untagged
@@ -198,7 +199,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3897011429516148364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -217,3 +218,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!70 &3132946185089222109
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897011429516148364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 05c4b68bc8134614593c9ba7f5e23469, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000003829167, y: -0.041791152}
+  m_Size: {x: 1, y: 0.9164177}
+  m_Direction: 0
