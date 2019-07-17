@@ -98,6 +98,11 @@ public class GameplayMechanics : MonoBehaviour
         {
             gpv.timeOfDay = gpv.timeOfDay - Time.deltaTime * gpv.timeScale;
         }
+
+        else
+        {
+            Mathf.Clamp(gpv.timeOfDay, 0.0f, 1000.0f);
+        }
     }
 
     void NightOverlayUpdater()
