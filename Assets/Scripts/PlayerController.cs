@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Current movement speed")]
     public float movementSpeed;
 
+    public bool playerSprinting = false;
+
     [Tooltip("Current sprinting multiplier. Default: 1.0")]
     [SerializeField] private float sprintMult = 1.0f;
 
@@ -67,14 +69,16 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && gpv.playerCoffee > 0)
         {
             sprintMult = sprintOnMult;
+            playerSprinting = true;
         }
 
         else
         {
             sprintMult = sprintOffMult;
+            playerSprinting = false;
         }
 
         playerRB.velocity = movementDirection * movementSpeed * movementSpeedMult * sprintMult;

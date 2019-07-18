@@ -8,7 +8,11 @@ public class GameplayMechanics : MonoBehaviour
     [Header("References:")]
     [Tooltip("GameplayVariables Data Package")]
     public GameplayVariables gpv;
+    [SerializeField] private PlayerController pController;
     private GameObject player;
+    [SerializeField] private GameObject gameOverScreen;
+
+
     [Tooltip("GameObject to disable when player walks into the cabbin")]
     public GameObject cabbinRoof;
     public GameObject playerStoreMarker;
@@ -46,6 +50,8 @@ public class GameplayMechanics : MonoBehaviour
     public float chopWoodProgress = 0.0f;
     public float chopWoodProgressRate = 20.0f;
 
+    [SerializeField] private float sprintDrainRate = 15.0f;
+
     [Space]
 
     [Header("Night Time Overlay stuff")]
@@ -70,6 +76,7 @@ public class GameplayMechanics : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        gameOverScreen.SetActive(false);
         playerStoreLocation = playerStoreMarker.transform.position;
         playerInStoreTrigger = GameObject.FindWithTag("PlayerInStoreTrigger");
         playerInStoreTrigger.SetActive(false);
@@ -90,6 +97,7 @@ public class GameplayMechanics : MonoBehaviour
         BuildCampfire();
         FireUpSauna();
         ChopWood();
+        SprintDrain();
 
         // System things
         DisableInputsForABit();
@@ -146,12 +154,22 @@ public class GameplayMechanics : MonoBehaviour
         {
             playerDead = true;
             PlayerDeath();
+
+            gameOverScreen.SetActive(true);
         }
     }
 
     void PlayerDeath()
     {
         Application.Quit();
+    }
+
+    void SprintDrain()
+    {
+        if (pController.playerSprinting)
+        {
+            gpv.playerCoffee = gpv.playerCoffee - Time.deltaTime * sprintDrainRate;
+        }
     }
 
     void PlayerStatsUpdate()
@@ -206,6 +224,11 @@ public class GameplayMechanics : MonoBehaviour
             {
                 gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
             }
+        }
+
+        if (other.gameObject.tag == "EnemyDamageTrigger")
+        {
+            gpv.playerHealth = gpv.playerHealth - Time.deltaTime * gpv.bearDamage;
         }
     }
 
