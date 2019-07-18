@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670320648674}
   - component: {fileID: 7501889670320648675}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerWall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7501889670402107188
 Transform:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670600402376}
   - component: {fileID: 7501889670600402377}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerWall3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670658456264}
   - component: {fileID: 7501889670658456265}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RightWallCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670721676463}
   - component: {fileID: 7501889670721676460}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CoffeeMaker (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670812777693}
   - component: {fileID: 7501889670812777682}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CoffeeMakerHandleOL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670839147238}
   - component: {fileID: 7501889670839147239}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TableCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670880653081}
   - component: {fileID: 7501889670880653086}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Kiuas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,9 +1195,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889670921757833}
   - component: {fileID: 7501889670921757838}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  - component: {fileID: 559746373816060061}
+  m_Layer: 16
+  m_Name: Table
+  m_TagString: CabbinTableTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1242,6 +1243,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7085927, y: 0.7585244}
   m_EdgeRadius: 0
+--- !u!61 &559746373816060061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501889670921757832}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009215236, y: -0.046076298}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7433648, y: 0.9078474}
+  m_EdgeRadius: 0
 --- !u!1 &7501889671124222863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671124222860}
   - component: {fileID: 7501889671124222861}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CoffeeMakerHandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671251852263}
   - component: {fileID: 7501889671251852260}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1467,7 +1494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671319348589}
   - component: {fileID: 7501889671319348578}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: BottomWallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1603,7 +1630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671384435347}
   - component: {fileID: 7501889671384435344}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1739,7 +1766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671424835863}
   - component: {fileID: 7501889671424835860}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RightWallCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1954,7 +1981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671706680875}
   - component: {fileID: 7501889671706680872}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeftWallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2448,7 +2475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671911847596}
   - component: {fileID: 7501889671911847597}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CabbinFinal
   m_TagString: CabbinTrigger
   m_Icon: {fileID: 0}
@@ -2484,6 +2511,7 @@ Transform:
   - {fileID: 7501889670839147238}
   - {fileID: 7501889671988360692}
   - {fileID: 7501889670880653081}
+  - {fileID: 4582888989522195688}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2523,7 +2551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889671988360692}
   - component: {fileID: 7501889671988360693}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: StoveCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2580,7 +2608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889672022659365}
   - component: {fileID: 7501889672022659354}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: UpperWallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2637,7 +2665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501889672044669112}
   - component: {fileID: 7501889672044669113}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CoffeeMakerBowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,3 +2813,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7835327616368320654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4582888989522195688}
+  - component: {fileID: 4451318772244624258}
+  m_Layer: 16
+  m_Name: SaunaTrigger
+  m_TagString: SaunaTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4582888989522195688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835327616368320654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7501889671911847596}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4451318772244624258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835327616368320654}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.9198656, y: 0.65778136}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8119478, y: 3.754457}
+  m_EdgeRadius: 0
