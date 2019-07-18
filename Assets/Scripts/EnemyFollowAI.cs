@@ -11,6 +11,8 @@ public class EnemyFollowAI : MonoBehaviour
     [SerializeField] public float enemySpeed = 5f;
     public Rigidbody2D enemyRb;
 
+    [SerializeField] private bool playerDetected = false;
+
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
@@ -20,7 +22,11 @@ public class EnemyFollowAI : MonoBehaviour
     {
         mDirection.Normalize();
         UpdatePlayerLocation();
-        MoveTo();
+
+        if (playerDetected)
+        {
+            MoveTo();
+        }
     }
 
     void MoveTo()
@@ -35,5 +41,30 @@ public class EnemyFollowAI : MonoBehaviour
     {
         targetLocation = player.GetComponent<Transform>().position;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            playerDetected = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            playerDetected = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            playerDetected = true;
+        }
+    }
+
 
 }

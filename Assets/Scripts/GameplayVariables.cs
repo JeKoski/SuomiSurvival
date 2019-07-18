@@ -49,7 +49,8 @@ public class GameplayVariables : ScriptableObject
 
     [Header("Damage Values")]
 
-    public float drunkDriverDamage = 50;
+    public float drunkDriverDamage = 50.0f;
+    public float bearDamage = 25.0f;
 
     [Space]
 
