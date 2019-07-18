@@ -17,6 +17,8 @@ TagManager:
   - PlayerInStoreTrigger
   - DrunkDriverDespawner
   - DrunkDriver
+  - BearTrigger
+  - EnemyDamageTrigger
   layers:
   - Default
   - TransparentFX
