@@ -5,21 +5,30 @@ using UnityEngine;
 public class EnemyFollowAI : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private Transform target;
+    //[SerializeField] private Transform target;
     private Vector2 targetLocation;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private Rigidbody2D rb;
-    
+    public Vector2 mDirection;
+    [SerializeField] public float enemySpeed = 5f;
+    public Rigidbody2D enemyRb;
 
+    private void Start()
+    {
+        enemyRb = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        mDirection.Normalize();
+        UpdatePlayerLocation();
+        MoveTo();
     }
 
     void MoveTo()
     {
 
+        transform.position = Vector2.MoveTowards(transform.position, targetLocation, Time.deltaTime * enemySpeed);
+        mDirection = enemyRb.velocity;
+        mDirection.Normalize();
     }
 
     void UpdatePlayerLocation()
