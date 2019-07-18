@@ -47,6 +47,12 @@ public class GameplayVariables : ScriptableObject
 
     [Space]
 
+    [Header("Damage Values")]
+
+    public float drunkDriverDamage = 50;
+
+    [Space]
+
     [Header("Fridge Items")]
 
     public int fridgeSausageCount;
@@ -155,6 +161,7 @@ public class GameplayVariables : ScriptableObject
     [Header("Misc.")]
     [Tooltip("When true, player can't move.")]
     public bool inputsDisabled = false;
+
 
     public void ResetAll()
     {

@@ -14,6 +14,8 @@ public class GameplayMechanics : MonoBehaviour
     public GameObject playerStoreMarker;
     public static Vector2 playerStoreLocation;
     private GameObject playerInStoreTrigger;
+    [SerializeField] GameObject playerSpawnPoint;
+    [SerializeField] GameObject playerCabbinPoint;
 
     [Space]
 
@@ -71,6 +73,7 @@ public class GameplayMechanics : MonoBehaviour
         playerStoreLocation = playerStoreMarker.transform.position;
         playerInStoreTrigger = GameObject.FindWithTag("PlayerInStoreTrigger");
         playerInStoreTrigger.SetActive(false);
+        MovePlayerToSpawn();
         gpv.ResetAll();
 
         nightTimeColor.a = nightTimeGradMax;
@@ -90,6 +93,7 @@ public class GameplayMechanics : MonoBehaviour
 
         // System things
         DisableInputsForABit();
+        CheckIfPlayerIsDead();
     }
 
     void GameTimeUpdate()
@@ -124,6 +128,30 @@ public class GameplayMechanics : MonoBehaviour
 
         Mathf.Clamp(nightTimeTargetAlpha, 0.0f, 1.0f);
         nightTimeSprite.color = Color.Lerp(nightTimeSprite.color, nightTimeColor, Time.deltaTime * nightTimeColorBlendTime);
+    }
+
+    void MovePlayerToSpawn()
+    {
+        transform.position = playerSpawnPoint.transform.position;
+    }
+
+    void MovePlayerToCabbin()
+    {
+        transform.position = playerCabbinPoint.transform.position;
+    }
+
+    void CheckIfPlayerIsDead()
+    {
+        if (gpv.playerHealth <= 0)
+        {
+            playerDead = true;
+            PlayerDeath();
+        }
+    }
+
+    void PlayerDeath()
+    {
+        Application.Quit();
     }
 
     void PlayerStatsUpdate()
@@ -250,6 +278,12 @@ public class GameplayMechanics : MonoBehaviour
             Debug.Log("You've entered the fireplace trigger");
             // Open menu for fireplace?
             playerInFireplace = true;
+        }
+
+        if (other.gameObject.tag == "DrunkDriver")
+        {
+            MovePlayerToCabbin();
+            gpv.playerHealth = gpv.playerHealth - gpv.drunkDriverDamage;
         }
     }
 
