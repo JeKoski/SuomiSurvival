@@ -9,6 +9,7 @@ public class DrunkDriverSpawnerScript : MonoBehaviour
     [SerializeField] float spawnDelay = 2.0f;
     [SerializeField] float minSpawnDelay = 10.0f;
     [SerializeField] float maxSpawnDelay = 30.0f;
+    [SerializeField] float rotation = 0.0f;
     private float spawnTimer = 0.0f;
 
     private void Start()
@@ -23,7 +24,7 @@ public class DrunkDriverSpawnerScript : MonoBehaviour
         if (spawnTimer > spawnDelay)
         {
             RNG();
-            Instantiate(drunkDriver, transform.position, Quaternion.Euler(0, 0, 0));
+            Instantiate(drunkDriver, transform.position, Quaternion.Euler(0, 0, rotation));
             spawnTimer = 0;
         }
     }
