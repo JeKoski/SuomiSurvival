@@ -18,7 +18,7 @@ public class EnemyFollowAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mDirection.Normalize();
+        
         UpdatePlayerLocation();
         MoveTo();
     }

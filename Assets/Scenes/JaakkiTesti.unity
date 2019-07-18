@@ -9181,6 +9181,7 @@ MonoBehaviour:
   spawnDelay: 2
   minSpawnDelay: 5
   maxSpawnDelay: 30
+  rotation: 0
 --- !u!61 &505460599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22268,7 +22269,7 @@ MonoBehaviour:
   player: {fileID: 1593840551}
   mDirection: {x: 0, y: 0}
   enemySpeed: 5
-  enemyRb: {fileID: 0}
+  enemyRb: {fileID: 1356059480}
 --- !u!50 &1356059480
 Rigidbody2D:
   serializedVersion: 4
@@ -22387,7 +22388,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.68846667
+  m_Radius: 0.9
 --- !u!4 &1356738054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3897011428775027099, guid: 2210da9c1995bd54d8de173e6b3eae05,
@@ -30788,6 +30789,7 @@ MonoBehaviour:
   spawnDelay: 2
   minSpawnDelay: 5
   maxSpawnDelay: 30
+  rotation: 0
 --- !u!1 &1758564475
 GameObject:
   m_ObjectHideFlags: 0
