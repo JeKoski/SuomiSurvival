@@ -54,6 +54,9 @@ public class GameplayMechanics : MonoBehaviour
     public float sausageProgress = 0.0f;
     public float sausageProgressRate = 10.0f;
 
+    //public bool resetCampfireBuildOnExit = true;
+
+
     [SerializeField] private float sprintDrainRate = 15.0f;
 
     [Space]
@@ -492,10 +495,10 @@ public class GameplayMechanics : MonoBehaviour
             }
         }
 
-        else if (!playerInLogging)
-        {
-            chopWoodProgress = 0.0f;
-        }
+        //else if (!playerInLogging)
+        //{
+        //    chopWoodProgress = 0.0f;
+        //}
     }
 
     private void FireUpSauna()
@@ -527,10 +530,10 @@ public class GameplayMechanics : MonoBehaviour
             }
         }
 
-        else if (!playerInTable)
-        {
-            coffeeBrewProgress = 0.0f;
-        }
+        //else if (!playerInTable)
+        //{
+        //    coffeeBrewProgress = 0.0f;
+        //}
     }
 
     private void cookSausage()
@@ -549,9 +552,9 @@ public class GameplayMechanics : MonoBehaviour
             }
         }
 
-        else if (!playerInFireplace)
-        {
-            sausageProgress = 0;
-        }
+        //else if (!playerInFireplace)
+        //{
+        //    sausageProgress = 0;
+        //}
     }
 }
