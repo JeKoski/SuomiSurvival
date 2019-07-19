@@ -124,6 +124,9 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("At what rate coffee level changes. Default: -0.5")]
     public float playerCoffeeRate = -0.5f;
 
+    [Tooltip("How much coffee meter one cup of coffee restores")]
+    public float playerCoffeeRestoreAmount = 50.0f;
+
     [Tooltip("At what rate warmth level changes. Default: 0.5")]
     public float playerWarmthRate = 0.5f;
 
