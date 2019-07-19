@@ -49,6 +49,10 @@ public class GameplayMechanics : MonoBehaviour
     public float campfireBuildProgressRate = 30.0f;
     public float chopWoodProgress = 0.0f;
     public float chopWoodProgressRate = 20.0f;
+    public float coffeeBrewProgress = 0.0f;
+    public float coffeeBrewProgressRate = 20.0f;
+    public float sausageProgress = 0.0f;
+    public float sausageProgressRate = 10.0f;
 
     [SerializeField] private float sprintDrainRate = 15.0f;
 
@@ -98,6 +102,8 @@ public class GameplayMechanics : MonoBehaviour
         FireUpSauna();
         ChopWood();
         SprintDrain();
+        BrewCoffee();
+        cookSausage();
 
         // System things
         DisableInputsForABit();
@@ -154,14 +160,74 @@ public class GameplayMechanics : MonoBehaviour
         {
             playerDead = true;
             PlayerDeath();
+        }
 
-            gameOverScreen.SetActive(true);
+        if (gpv.playerMosquitoes == 100.0f)
+        {
+            playerDead = true;
+            PlayerDeathMosquitoes();
+        }
+
+        if (gpv.playerHunger <= 0)
+        {
+            playerDead = true;
+            PlayerDeathHunger();
+        }
+
+        if (gpv.playerThirst <= 0)
+        {
+            playerDead = true;
+            PlayerDeathThirst();
+        }
+
+        if (gpv.playerWarmth <= -100.0f)
+        {
+            playerDead = true;
+            PlayerDeathCold();
+        }
+
+        if (gpv.playerWarmth >= 100.0f)
+        {
+            playerDead = true;
+            PlayerDeathHeat();
         }
     }
 
     void PlayerDeath()
     {
-        Application.Quit();
+        gameOverScreen.SetActive(true);
+        //Application.Quit();
+        MovePlayerToCabbin();
+    }
+
+    void PlayerDeathMosquitoes()
+    {
+        gameOverScreen.SetActive(true); // Replace this with screen related to blood loss
+        MovePlayerToCabbin();
+    }
+
+    void PlayerDeathHunger()
+    {
+        gameOverScreen.SetActive(true); // Replace this with screen related to starvation
+        MovePlayerToCabbin();
+    }
+
+    void PlayerDeathThirst()
+    {
+        gameOverScreen.SetActive(true); // Replace this with screen related to dehydration
+        MovePlayerToCabbin();
+    }
+
+    void PlayerDeathHeat()
+    {
+        gameOverScreen.SetActive(true); // Replace this with screen related to heat stroke
+        MovePlayerToCabbin();
+    }
+
+    void PlayerDeathCold()
+    {
+        gameOverScreen.SetActive(true); // Replace this with screen related to hypothermia
+        MovePlayerToCabbin();
     }
 
     void SprintDrain()
@@ -187,7 +253,10 @@ public class GameplayMechanics : MonoBehaviour
             }
         }
         
-        gpv.playerMosquitoes = gpv.playerMosquitoes + Time.deltaTime * gpv.playerMosquitoesDecayRate;
+        if (!playerInMosquitoField)
+        {
+            gpv.playerMosquitoes = gpv.playerMosquitoes + Time.deltaTime * gpv.playerMosquitoesDecayRate;
+        }
 
         ClampPlayerStats();
     }
@@ -423,7 +492,7 @@ public class GameplayMechanics : MonoBehaviour
             }
         }
 
-        if (!playerInLogging)
+        else if (!playerInLogging)
         {
             chopWoodProgress = 0.0f;
         }
@@ -441,6 +510,48 @@ public class GameplayMechanics : MonoBehaviour
                 saunaOnProgress = 0.0f;
                 gpv.playerFirewood = gpv.playerFirewood - firewoodRequiredForSauna;
             }
+        }
+    }
+
+    private void BrewCoffee()
+    {
+        if (playerInTable && Input.GetKey(KeyCode.E) && gpv.playerCoffeeCups > 0)
+        {
+            coffeeBrewProgress = coffeeBrewProgress + (Time.deltaTime * coffeeBrewProgressRate);
+
+            if (coffeeBrewProgress >= 100.0f)
+            {
+                gpv.playerCoffeeCups--;
+                gpv.playerCoffee = gpv.playerCoffee + gpv.playerCoffeeRestoreAmount;
+                coffeeBrewProgress = 0.0f;
+            }
+        }
+
+        else if (!playerInTable)
+        {
+            coffeeBrewProgress = 0.0f;
+        }
+    }
+
+    private void cookSausage()
+    {
+        if (playerInFireplace && campfireBuilt && Input.GetKey(KeyCode.E) && gpv.playerSausages > 0)
+        {
+            sausageProgress = sausageProgress + (Time.deltaTime * sausageProgressRate);
+
+            if (sausageProgress >= 100.0f)
+            {
+                gpv.playerSausages--;
+                gpv.playerHealth = gpv.playerHealth + gpv.cookedSausageRestoreAmount;
+                gpv.playerHunger = gpv.playerHunger + gpv.cookedSausageRestoreAmount;
+
+                sausageProgress = 0;
+            }
+        }
+
+        else if (!playerInFireplace)
+        {
+            sausageProgress = 0;
         }
     }
 }

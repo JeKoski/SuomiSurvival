@@ -13,6 +13,8 @@ public class ActionUIHandler : MonoBehaviour
     public Slider woodChoppingBar;
     public Slider buildCampfireBar;
     public Slider saunaOnBar;
+    public Slider brewCoffeeBar;
+    public Slider cookSausageBar;
 
     [SerializeField] private GameObject playerMoneyCount;
     [SerializeField] private GameObject firewoodCount;
@@ -57,6 +59,15 @@ public class ActionUIHandler : MonoBehaviour
     private Vector2 fridgeUIHide = new Vector2(-1000.0f, -1500.0f);
     private bool fridgeUIIsAway = true;
 
+    [SerializeField] private GameObject coffeeBrewUI;
+    private Vector2 coffeeBrewUIShow = new Vector2(0.0f, -200.0f);
+    private Vector2 coffeeBrewUIHide = new Vector2(800.0f, 1000.0f);
+    private bool coffeeBrewUIIsAway = true;
+
+    [SerializeField] private GameObject cookSausageUI;
+    private Vector2 cookSausageUIShow = new Vector2(0.0f, -200.0f);
+    private Vector2 cookSausageUIHide = new Vector2(-800.0f, 1000.0f);
+    private bool cookSausageUIIsAway = true;
 
     private void Update()
     {
@@ -139,6 +150,26 @@ public class ActionUIHandler : MonoBehaviour
             HideFridgeUI();
         }
 
+        if (gpm.playerInTable)
+        {
+            ShowCoffeeBrewUI();
+        }
+
+        else if (!gpm.playerInTable)
+        {
+            HideCoffeeBrewUI();
+        }
+
+        if (gpm.playerInFireplace && gpm.campfireBuilt)
+        {
+            ShowCookSausageUI();
+        }
+
+        else if (!gpm.playerInFireplace || !gpm.campfireBuilt)
+        {
+            HideCookSausageUI();
+        }
+
         UpdateProgressBars();
         UpdateResourceUI();
     }
@@ -148,6 +179,8 @@ public class ActionUIHandler : MonoBehaviour
         buildCampfireBar.value = gpm.campfireBuildProgress;
         woodChoppingBar.value = gpm.chopWoodProgress;
         saunaOnBar.value = gpm.saunaOnProgress;
+        brewCoffeeBar.value = gpm.coffeeBrewProgress;
+        cookSausageBar.value = gpm.sausageProgress;
     }
 
     public void UpdateResourceUI()
@@ -244,5 +277,25 @@ public class ActionUIHandler : MonoBehaviour
     private void ShowFridgeUI()
     {
         fridgeUI.transform.localPosition = fridgeUIShow;
+    }
+
+    private void HideCoffeeBrewUI()
+    {
+        coffeeBrewUI.transform.localPosition = coffeeBrewUIHide;
+    }
+
+    private void ShowCoffeeBrewUI()
+    {
+        coffeeBrewUI.transform.localPosition = coffeeBrewUIShow;
+    }
+
+    private void HideCookSausageUI()
+    {
+        cookSausageUI.transform.localPosition = cookSausageUIHide;
+    }
+
+    private void ShowCookSausageUI()
+    {
+        cookSausageUI.transform.localPosition = cookSausageUIShow;
     }
 }
