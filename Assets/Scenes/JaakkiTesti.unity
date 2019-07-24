@@ -1013,6 +1013,7 @@ MonoBehaviour:
   mDirection: {x: 0, y: 0}
   enemySpeed: 5
   enemyRb: {fileID: 41307343}
+  playerDetected: 0
 --- !u!114 &41307342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,7 +1130,7 @@ Transform:
   m_Children:
   - {fileID: 304593499}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &43618833
 PrefabInstance:
@@ -2668,6 +2669,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1599667408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &162584226
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5721304364753824538, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_Name
+      value: Bear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -167.87134
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.30685
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721304364753824537, guid: d74955566524f564796397ff4b369399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d74955566524f564796397ff4b369399, type: 3}
 --- !u!4 &163894313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3897011428775027099, guid: 2210da9c1995bd54d8de173e6b3eae05,
@@ -19791,6 +19861,8 @@ MonoBehaviour:
   woodChoppingBar: {fileID: 18110773}
   buildCampfireBar: {fileID: 239098741}
   saunaOnBar: {fileID: 936470985}
+  brewCoffeeBar: {fileID: 0}
+  cookSausageBar: {fileID: 0}
   playerMoneyCount: {fileID: 729029656}
   firewoodCount: {fileID: 899847575}
   sausageCount: {fileID: 436554676}
@@ -19804,6 +19876,8 @@ MonoBehaviour:
   saunaInfoText: {fileID: 748737036}
   storeUI: {fileID: 1118549069}
   fridgeUI: {fileID: 9409713}
+  coffeeBrewUI: {fileID: 0}
+  cookSausageUI: {fileID: 0}
 --- !u!4 &1147407085
 Transform:
   m_ObjectHideFlags: 0
@@ -22521,6 +22595,7 @@ MonoBehaviour:
   mDirection: {x: 0, y: 0}
   enemySpeed: 5
   enemyRb: {fileID: 1356059480}
+  playerDetected: 0
 --- !u!50 &1356059480
 Rigidbody2D:
   serializedVersion: 4
@@ -28338,6 +28413,7 @@ MonoBehaviour:
   movementSpeedMult: 4
   sprintOnMult: 2
   movementSpeed: 0
+  playerSprinting: 0
   sprintMult: 1
   sprintOffMult: 1
 --- !u!114 &1593840557
@@ -28353,6 +28429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gpv: {fileID: 11400000, guid: 6b66262949fa7f44681203e3b6f98bfe, type: 2}
+  pController: {fileID: 0}
+  gameOverScreen: {fileID: 0}
   cabbinRoof: {fileID: 1416636387}
   playerStoreMarker: {fileID: 964740632}
   playerSpawnPoint: {fileID: 10387161}
@@ -28377,6 +28455,11 @@ MonoBehaviour:
   campfireBuildProgressRate: 20
   chopWoodProgress: 0
   chopWoodProgressRate: 30
+  coffeeBrewProgress: 0
+  coffeeBrewProgressRate: 20
+  sausageProgress: 0
+  sausageProgressRate: 10
+  sprintDrainRate: 15
   nightTimeOverlay: {fileID: 622400959}
   nightTimeSprite: {fileID: 622400960}
   nightTimeColor: {r: 0.05882353, g: 0, b: 0.19607843, a: 0}
@@ -35536,7 +35619,7 @@ PrefabInstance:
     - target: {fileID: 508239810044494228, guid: 63cf2719f65912a4e89d3f7f38593ecf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 508239810044494228, guid: 63cf2719f65912a4e89d3f7f38593ecf,
         type: 3}
@@ -35624,3 +35707,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2210da9c1995bd54d8de173e6b3eae05, type: 3}
+--- !u!1001 &5259106347485189935
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5259106347649600801, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Flame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -163.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259106347649600830, guid: cdb1ed45c402cdb42b84ee85a18a26e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdb1ed45c402cdb42b84ee85a18a26e3, type: 3}
