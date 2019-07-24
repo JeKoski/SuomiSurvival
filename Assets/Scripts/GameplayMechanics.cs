@@ -11,6 +11,12 @@ public class GameplayMechanics : MonoBehaviour
     [SerializeField] private PlayerController pController;
     private GameObject player;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject bearPrefab;
+    [SerializeField] private GameObject bearSpawnNW;
+    [SerializeField] private GameObject bearSpawnNE;
+    [SerializeField] private GameObject bearSpawnSW;
+    [SerializeField] private GameObject bearSpawnSE;
+    [SerializeField] private GameObject metalDude;
 
 
     [Tooltip("GameObject to disable when player walks into the cabbin")]
@@ -37,6 +43,7 @@ public class GameplayMechanics : MonoBehaviour
     public bool playerInFridge = false;
     public bool playerInFireplace = false;
     public bool playerDead = false;
+    public bool playerInForestEdge = false;
 
     [Space]
 
@@ -53,6 +60,8 @@ public class GameplayMechanics : MonoBehaviour
     public float coffeeBrewProgressRate = 20.0f;
     public float sausageProgress = 0.0f;
     public float sausageProgressRate = 10.0f;
+    [SerializeField] private float bearSpawnTimer = 0.0f;
+    public float bearSpawnRate = 3.0f;
 
     //public bool resetCampfireBuildOnExit = true;
 
@@ -111,6 +120,9 @@ public class GameplayMechanics : MonoBehaviour
         // System things
         DisableInputsForABit();
         CheckIfPlayerIsDead();
+
+        // Misc
+        BearSpawner();
     }
 
     void GameTimeUpdate()
@@ -288,15 +300,15 @@ public class GameplayMechanics : MonoBehaviour
             gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWaterCoolingRate;
         }
 
-        if (other.gameObject.tag == "SaunaTrigger")
-        {
-            Debug.Log("You're in the sauna!");
+        //if (other.gameObject.tag == "SaunaTrigger")
+        //{
+        //    Debug.Log("You're in the sauna!");
 
-            if (saunaOn)
-            {
-                gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
-            }
-        }
+        //    if (saunaOn)
+        //    {
+        //        gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
+        //    }
+        //}
 
         if (other.gameObject.tag == "EnemyDamageTrigger")
         {
@@ -380,6 +392,11 @@ public class GameplayMechanics : MonoBehaviour
             MovePlayerToCabbin();
             gpv.playerHealth = gpv.playerHealth - gpv.drunkDriverDamage;
         }
+
+        if (other.gameObject.tag == "ForestEdge")
+        {
+            playerInForestEdge = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -447,6 +464,11 @@ public class GameplayMechanics : MonoBehaviour
             Debug.Log("You've left the fireplace trigger");
             // Close menu for fireplace?
             playerInFireplace = false;
+        }
+
+        if (other.gameObject.tag == "ForestEdge")
+        {
+            playerInForestEdge = false;
         }
     }
 
@@ -556,5 +578,86 @@ public class GameplayMechanics : MonoBehaviour
         //{
         //    sausageProgress = 0;
         //}
+    }
+
+    private void BearSpawner()
+    {
+        int result;
+
+        if (playerInForestEdge)
+        {
+            bearSpawnTimer = bearSpawnTimer + Time.deltaTime;
+
+
+            if (bearSpawnTimer >= bearSpawnRate)
+            {
+                result = Mathf.RoundToInt(Random.Range(0, 100));
+
+                if (result <= 10)
+                {
+                    SpawnMetalDude();
+                }
+
+                if (result > 10)
+                {
+                    SpawnBear();
+                }
+
+
+                bearSpawnTimer = 0;
+            }
+        }
+    }
+
+    private void SpawnBear()
+    {
+        int spawnLocation; // 1 = NW, 2 = NE, 3 = SE, 4 = SW
+
+        spawnLocation = Mathf.RoundToInt(Random.Range(1, 4));
+
+        switch (spawnLocation)
+        {
+            case 1:
+                Instantiate(bearPrefab, bearSpawnNW.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 2:
+                Instantiate(bearPrefab, bearSpawnNE.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 3:
+                Instantiate(bearPrefab, bearSpawnSE.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 4:
+                Instantiate(bearPrefab, bearSpawnSW.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+        }
+    }
+
+    private void SpawnMetalDude()
+    {
+        int spawnLocation; // 1 = NW, 2 = NE, 3 = SE, 4 = SW
+
+        spawnLocation = Mathf.RoundToInt(Random.Range(1, 4));
+
+        switch (spawnLocation)
+        {
+            case 1:
+                Instantiate(metalDude, bearSpawnNW.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 2:
+                Instantiate(metalDude, bearSpawnNE.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 3:
+                Instantiate(metalDude, bearSpawnSE.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 4:
+                Instantiate(metalDude, bearSpawnSW.transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+        }
     }
 }
