@@ -19,6 +19,7 @@ TagManager:
   - DrunkDriver
   - BearTrigger
   - EnemyDamageTrigger
+  - ForestEdge
   layers:
   - Default
   - TransparentFX
@@ -50,7 +51,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Bear
   - DarkTree
   m_SortingLayers:
   - name: Default

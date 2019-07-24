@@ -69,6 +69,11 @@ public class ActionUIHandler : MonoBehaviour
     private Vector2 cookSausageUIHide = new Vector2(-800.0f, 1000.0f);
     private bool cookSausageUIIsAway = true;
 
+    [SerializeField] private GameObject metalDudePopupUI;
+    private Vector2 metalDudePopupUIShow = new Vector2(-480.0f, 87.5f);
+    private Vector2 metalDudePopupUIHide = new Vector2(-480.0f, -1500.0f);
+    private bool metalDudePopupUIIsAway = true;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -297,5 +302,15 @@ public class ActionUIHandler : MonoBehaviour
     private void ShowCookSausageUI()
     {
         cookSausageUI.transform.localPosition = cookSausageUIShow;
+    }
+
+    private void HideMetalDudePopup()
+    {
+        metalDudePopupUI.transform.localPosition = metalDudePopupUIHide;
+    }
+
+    private void ShowMetalDudePopup()
+    {
+        metalDudePopupUI.transform.localPosition = metalDudePopupUIShow;
     }
 }

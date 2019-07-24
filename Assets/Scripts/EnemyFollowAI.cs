@@ -13,6 +13,11 @@ public class EnemyFollowAI : MonoBehaviour
 
     [SerializeField] private bool playerDetected = false;
 
+    private void Awake()
+    {
+        player = GameObject.Find("PlayerPH");
+    }
+
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
