@@ -429,7 +429,6 @@ public class GameplayMechanics : MonoBehaviour
             Debug.Log("You've left the Store");
             playerInStore = false;
             playerInStoreTrigger.SetActive(false);
-            // Close store window
         }
 
         if (other.gameObject.tag == "CabbinTrigger")
@@ -448,21 +447,18 @@ public class GameplayMechanics : MonoBehaviour
         if (other.gameObject.tag == "CabbinTableTrigger")
         {
             Debug.Log("You've left the cabbin table trigger");
-            // Close table menu
             playerInTable = false;
         }
 
         if (other.gameObject.tag == "FridgeTrigger")
         {
             Debug.Log("You've left the fridge trigger");
-            // Close fridge menu
             playerInFridge = false;
         }
 
         if (other.gameObject.tag == "FireplaceTrigger")
         {
             Debug.Log("You've left the fireplace trigger");
-            // Close menu for fireplace?
             playerInFireplace = false;
         }
 
