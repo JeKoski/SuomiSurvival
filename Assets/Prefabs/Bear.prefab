@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 5721304364753824536}
   - component: {fileID: 5721304364753824531}
   m_Layer: 12
-  m_Name: Enemy 1
+  m_Name: Bear
   m_TagString: BearTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,8 +201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   mDirection: {x: 0, y: 0}
-  enemySpeed: 5
+  enemySpeed: 4
   enemyRb: {fileID: 5721304364753824535}
+  isHevari: 0
+  hevariTimer: 2
   playerDetected: 0
 --- !u!58 &5721304364753824531
 CircleCollider2D:

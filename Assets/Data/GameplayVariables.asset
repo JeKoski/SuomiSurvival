@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f3a92f067eec94b891bd61d4ca76e5, type: 3}
   m_Name: GameplayVariables
   m_EditorClassIdentifier: 
-  timeOfDay: 990.217
+  timeOfDay: 948.3847
   timeScale: 2
   playerHealth: 100
-  playerCoffee: 35.716553
-  playerWarmth: 2.446025
+  playerCoffee: 18.112894
+  playerWarmth: 12.905571
   playerMosquitoes: 0
-  playerHunger: 47.553837
-  playerThirst: 47.553837
-  playerMoney: 20
-  playerFirewood: 0
-  playerSausages: 0
-  playerBeer: 0
-  playerCoffeeCups: 0
-  playerRepellent: 0
+  playerHunger: 37.09348
+  playerThirst: 87.09404
+  playerMoney: 100
+  playerFirewood: 20
+  playerSausages: 10
+  playerBeer: 10
+  playerCoffeeCups: 10
+  playerRepellent: 10
   drunkDriverDamage: 50
   bearDamage: 50
   fridgeSausageCount: 0
@@ -54,15 +54,17 @@ MonoBehaviour:
   timeOfDayDefault: 1000
   playerCoffeeRate: -0.3
   playerCoffeeRestoreAmount: 50
+  playerRawCoffeeRestoreAmount: 5
   playerWarmthRate: 0.5
   playerWarmthSaunaRate: 5
   playerWaterCoolingRate: -10
   playerMosquitoesRate: 5
   playerMosquitoesDecayRate: -0.5
-  playerHungerRate: -0.5
+  playerHungerRate: -0.3
   playerThirstRate: -0.5
   coldSausageRestoreAmount: 10
   cookedSausageRestoreAmount: 50
   warmBeerRestoreAmount: 10
   coldBeerRestoreAmount: 50
   inputsDisabled: 0
+  repellentOn: 0

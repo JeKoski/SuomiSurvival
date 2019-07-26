@@ -17,6 +17,9 @@ public class GameplayMechanics : MonoBehaviour
     [SerializeField] private GameObject bearSpawnSW;
     [SerializeField] private GameObject bearSpawnSE;
     [SerializeField] private GameObject metalDude;
+    [SerializeField] private GameObject campfireFlame;
+    [SerializeField] private GameObject repellentBuff;
+    public GameObject coldBeerBuff;
 
 
     [Tooltip("GameObject to disable when player walks into the cabbin")]
@@ -44,6 +47,7 @@ public class GameplayMechanics : MonoBehaviour
     public bool playerInFireplace = false;
     public bool playerDead = false;
     public bool playerInForestEdge = false;
+    public bool metalDudeTriggered = false;
 
     [Space]
 
@@ -62,6 +66,7 @@ public class GameplayMechanics : MonoBehaviour
     public float sausageProgressRate = 10.0f;
     [SerializeField] private float bearSpawnTimer = 0.0f;
     public float bearSpawnRate = 3.0f;
+    public int coldBeerRemaining = 0;
 
     //public bool resetCampfireBuildOnExit = true;
 
@@ -88,6 +93,7 @@ public class GameplayMechanics : MonoBehaviour
     [SerializeField] private float inputDelay = 1.0f;
     [SerializeField] private float inputDelayTimer = 0.0f;
     private bool freezePlayer = false;
+    [SerializeField] private float repellentTimer = 30.0f;
 
     void Start()
     {
@@ -96,6 +102,8 @@ public class GameplayMechanics : MonoBehaviour
         playerStoreLocation = playerStoreMarker.transform.position;
         playerInStoreTrigger = GameObject.FindWithTag("PlayerInStoreTrigger");
         playerInStoreTrigger.SetActive(false);
+        repellentBuff.SetActive(false);
+        coldBeerBuff.SetActive(false);
         MovePlayerToSpawn();
         gpv.ResetAll();
 
@@ -108,6 +116,7 @@ public class GameplayMechanics : MonoBehaviour
         GameTimeUpdate();
         PlayerStatsUpdate();
         NightOverlayUpdater();
+        CampfireFlameFlipper();
 
         // Actions
         BuildCampfire();
@@ -123,6 +132,7 @@ public class GameplayMechanics : MonoBehaviour
 
         // Misc
         BearSpawner();
+        RepellentEffect();
     }
 
     void GameTimeUpdate()
@@ -291,7 +301,11 @@ public class GameplayMechanics : MonoBehaviour
         if (other.gameObject.tag == "MosquitoField")
         {
             Debug.Log("You're in a Mosquito Field!");
-            gpv.playerMosquitoes = gpv.playerMosquitoes + Time.deltaTime * gpv.playerMosquitoesRate;
+
+            if (!gpv.repellentOn)
+            {
+                gpv.playerMosquitoes = gpv.playerMosquitoes + Time.deltaTime * gpv.playerMosquitoesRate;
+            }
         }
 
         if (other.gameObject.tag == "WaterTrigger")
@@ -396,6 +410,11 @@ public class GameplayMechanics : MonoBehaviour
         if (other.gameObject.tag == "ForestEdge")
         {
             playerInForestEdge = true;
+        }
+
+        if (other.gameObject.tag == "MetalDudeTrigger")
+        {
+            MetalDudeInteraction();
         }
     }
 
@@ -655,5 +674,44 @@ public class GameplayMechanics : MonoBehaviour
                 Instantiate(metalDude, bearSpawnSW.transform.position, Quaternion.Euler(0, 0, 0));
                 break;
         }
+    }
+
+    private void CampfireFlameFlipper()
+    {
+        if (campfireBuilt)
+        {
+            campfireFlame.SetActive(true);
+        }
+
+        else if (!campfireBuilt)
+        {
+            campfireFlame.SetActive(false);
+        }
+    }
+
+    private void RepellentEffect()
+    {
+        if (gpv.repellentOn)
+        {
+            repellentTimer = repellentTimer - Time.deltaTime;
+
+            repellentBuff.SetActive(true);
+
+            if (repellentTimer <= 0)
+            {
+                gpv.repellentOn = false;
+                repellentTimer = 30.0f;
+
+                repellentBuff.SetActive(false);
+            }
+        }
+    }
+
+    private void MetalDudeInteraction()
+    {
+        metalDudeTriggered = true;
+
+        coldBeerBuff.SetActive(true);
+        coldBeerRemaining = 6;
     }
 }
