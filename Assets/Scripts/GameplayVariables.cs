@@ -127,6 +127,9 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("How much coffee meter one cup of coffee restores")]
     public float playerCoffeeRestoreAmount = 50.0f;
 
+    [Tooltip("How much coffee meter one raw coffee restores")]
+    public float playerRawCoffeeRestoreAmount = 5.0f;
+
     [Tooltip("At what rate warmth level changes. Default: 0.5")]
     public float playerWarmthRate = 0.5f;
 
@@ -166,11 +169,15 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("When true, player can't move.")]
     public bool inputsDisabled = false;
 
+    [Tooltip("Repellent effect check")]
+    public bool repellentOn;
+
 
     public void ResetAll()
     {
         timeOfDay = timeOfDayDefault;
         inputsDisabled = false;
+        repellentOn = false;
 
         playerMoney = playerMoneyDefault;
         playerFirewood = playerFirewoodDefault;

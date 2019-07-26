@@ -9,6 +9,7 @@ public class ActionUIHandler : MonoBehaviour
     [SerializeField] private GameplayMechanics gpm;
     [SerializeField] private GameplayVariables gpv;
     private bool campfireBuilt = false;
+    [SerializeField] private float popUpTimer = 5.0f;
 
     public Slider woodChoppingBar;
     public Slider buildCampfireBar;
@@ -22,6 +23,7 @@ public class ActionUIHandler : MonoBehaviour
     [SerializeField] private GameObject beerCount;
     [SerializeField] private GameObject coffeeCount;
     [SerializeField] private GameObject repellentCount;
+    [SerializeField] private GameObject coldBeerBuffCount;
 
     [SerializeField] GameObject woodChoppingUI;
     private Vector2 woodChoppingShow = new Vector2(0.0f, -200.0f);
@@ -177,6 +179,7 @@ public class ActionUIHandler : MonoBehaviour
 
         UpdateProgressBars();
         UpdateResourceUI();
+        MetalDude();
     }
 
     public void UpdateProgressBars()
@@ -304,6 +307,26 @@ public class ActionUIHandler : MonoBehaviour
         cookSausageUI.transform.localPosition = cookSausageUIShow;
     }
 
+    private void MetalDude()
+    {
+
+        if (gpm.metalDudeTriggered)
+        {
+            ShowMetalDudePopup();
+            UpdateColdBeerBuffCount();
+
+            popUpTimer = popUpTimer - Time.deltaTime;
+
+            if (popUpTimer <= 0)
+            {
+                gpm.metalDudeTriggered = false;
+                HideMetalDudePopup();
+                UpdateColdBeerBuffCount();
+            }
+
+        }
+    }
+
     private void HideMetalDudePopup()
     {
         metalDudePopupUI.transform.localPosition = metalDudePopupUIHide;
@@ -312,5 +335,10 @@ public class ActionUIHandler : MonoBehaviour
     private void ShowMetalDudePopup()
     {
         metalDudePopupUI.transform.localPosition = metalDudePopupUIShow;
+    }
+
+    public void UpdateColdBeerBuffCount()
+    {
+        coldBeerBuffCount.GetComponent<TextMeshProUGUI>().text = "x " + gpm.coldBeerRemaining;
     }
 }

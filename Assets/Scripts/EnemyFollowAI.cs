@@ -10,6 +10,8 @@ public class EnemyFollowAI : MonoBehaviour
     public Vector2 mDirection;
     [SerializeField] public float enemySpeed = 5f;
     public Rigidbody2D enemyRb;
+    public bool isHevari = false;
+    [SerializeField] private float hevariTimer = 2.0f;
 
     [SerializeField] private bool playerDetected = false;
 
@@ -32,6 +34,8 @@ public class EnemyFollowAI : MonoBehaviour
         {
             MoveTo();
         }
+
+        HevariBehavior();
     }
 
     void MoveTo()
@@ -71,5 +75,19 @@ public class EnemyFollowAI : MonoBehaviour
         }
     }
 
+    private void HevariBehavior()
+    {
+        if (isHevari)
+        {
+            if (playerDetected)
+            {
+                hevariTimer = hevariTimer - Time.deltaTime;
 
+                if (hevariTimer <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
 }
