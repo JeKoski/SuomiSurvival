@@ -21,6 +21,7 @@ TagManager:
   - EnemyDamageTrigger
   - ForestEdge
   - MetalDudeTrigger
+  - OldDudeTrigger
   layers:
   - Default
   - TransparentFX

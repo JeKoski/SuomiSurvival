@@ -56,6 +56,15 @@ public class StoreController : MonoBehaviour
         }
     }
 
+    public void SellFirewood()
+    {
+        if (gpv.playerFirewood >= 10)
+        {
+            gpv.playerFirewood = gpv.playerFirewood - 10;
+            gpv.playerMoney = gpv.playerMoney + 5;
+        }
+    }
+
     public void ExitStore()
     {
         // When clicking Exit store

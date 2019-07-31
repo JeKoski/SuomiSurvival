@@ -349,6 +349,7 @@ MonoBehaviour:
   mineExplosion: {fileID: 4587742640841935524, guid: 6c01f61bd4e2ea143acc035d61bb99d4,
     type: 3}
   mineNotification: {fileID: 0}
+  mineParent: {fileID: 6381365756705973960}
   mineTriggered: 0
   mineExploded: 0
   playerInDangerZone: 0
@@ -420,8 +421,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1074358775
-  m_SortingLayer: 9
+  m_SortingLayerID: 879402689
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e91b7a46274135f438fe43c01a0270c9, type: 3}
   m_Color: {r: 0.14638963, g: 0.6698113, b: 0, a: 0.34117648}

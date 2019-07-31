@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 1350281851107599018}
   - component: {fileID: 1350281851107599019}
   - component: {fileID: 7596462970912433053}
+  - component: {fileID: 2698670215162297183}
   m_Layer: 17
   m_Name: MosquitoField
-  m_TagString: MosquitoField
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350281851107599008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.97, y: -2.375, z: -1.8417969}
+  m_LocalPosition: {x: -170.4649, y: -22.39096, z: -1.8417969}
   m_LocalScale: {x: 18.641378, y: 18.463268, z: 7.1466737}
   m_Children:
   - {fileID: 2277450973926215364}
@@ -130,12 +131,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350281851107599008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abab494da42d5e44789395d2bdbefa28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 5
+  enemySpeed: 1
   stoppingDistance: 0
 --- !u!95 &1350281851107599019
 Animator:
@@ -171,7 +172,26 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.001216689, y: 0}
   serializedVersion: 2
-  m_Radius: 0.14623427
+  m_Radius: 0.29
+--- !u!114 &2698670215162297183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350281851107599008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81a3ae90b8ea464d9eb5c71d405e66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  mDirection: {x: 0, y: 0}
+  enemySpeed: 2
+  enemyRb: {fileID: 0}
+  isHevari: 0
+  hevariTimer: 2
+  playerDetected: 0
 --- !u!1 &2672827558638717123
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,9 +248,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1472194756962395053}
+  - component: {fileID: 1239128387081451701}
   m_Layer: 17
   m_Name: MosquitoDamageField
-  m_TagString: Untagged
+  m_TagString: MosquitoField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,3 +270,19 @@ Transform:
   m_Father: {fileID: 1350281851107599021}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1239128387081451701
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809389374558937418}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08

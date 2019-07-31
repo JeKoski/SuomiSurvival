@@ -76,6 +76,10 @@ public class ActionUIHandler : MonoBehaviour
     private Vector2 metalDudePopupUIHide = new Vector2(-480.0f, -1500.0f);
     private bool metalDudePopupUIIsAway = true;
 
+    [SerializeField] private GameObject oldDudeUI;
+    private Vector2 oldDudeUIShow = new Vector2(-600.0f, 0);
+    private Vector2 oldDudeUIHide = new Vector2(900.0f, -1500.0f);
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -175,6 +179,16 @@ public class ActionUIHandler : MonoBehaviour
         else if (!gpm.playerInFireplace || !gpm.campfireBuilt)
         {
             HideCookSausageUI();
+        }
+
+        if (gpm.playerAtOldDude)
+        {
+            ShowOldDudeUI();
+        }
+
+        else if (!gpm.playerAtOldDude)
+        {
+            HideOldDudeUI();
         }
 
         UpdateProgressBars();
@@ -340,5 +354,15 @@ public class ActionUIHandler : MonoBehaviour
     public void UpdateColdBeerBuffCount()
     {
         coldBeerBuffCount.GetComponent<TextMeshProUGUI>().text = "x " + gpm.coldBeerRemaining;
+    }
+
+    private void HideOldDudeUI()
+    {
+        oldDudeUI.transform.localPosition = oldDudeUIHide;
+    }
+
+    private void ShowOldDudeUI()
+    {
+        oldDudeUI.transform.localPosition = oldDudeUIShow;
     }
 }

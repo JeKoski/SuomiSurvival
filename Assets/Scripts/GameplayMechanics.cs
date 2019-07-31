@@ -11,6 +11,7 @@ public class GameplayMechanics : MonoBehaviour
     [SerializeField] private PlayerController pController;
     private GameObject player;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject dayOverScreen;
     [SerializeField] private GameObject bearPrefab;
     [SerializeField] private GameObject bearSpawnNW;
     [SerializeField] private GameObject bearSpawnNE;
@@ -48,6 +49,8 @@ public class GameplayMechanics : MonoBehaviour
     public bool playerDead = false;
     public bool playerInForestEdge = false;
     public bool metalDudeTriggered = false;
+    public bool playerAtOldDude = false;
+    public bool isNightTime = false;
 
     [Space]
 
@@ -101,6 +104,7 @@ public class GameplayMechanics : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         gameOverScreen.SetActive(false);
+        dayOverScreen.SetActive(false);
         playerStoreLocation = playerStoreMarker.transform.position;
         playerInStoreTrigger = GameObject.FindWithTag("PlayerInStoreTrigger");
         playerInStoreTrigger.SetActive(false);
@@ -147,6 +151,21 @@ public class GameplayMechanics : MonoBehaviour
         else
         {
             Mathf.Clamp(gpv.timeOfDay, 0.0f, 1000.0f);
+        }
+
+        if (gpv.timeOfDay < 300)
+        {
+            isNightTime = true;
+        }
+
+        else
+        {
+            isNightTime = false;
+        }
+
+        if (gpv.timeOfDay <= 0)
+        {
+            dayOverScreen.SetActive(true);
         }
     }
 
@@ -277,16 +296,25 @@ public class GameplayMechanics : MonoBehaviour
         if (!playerInCabbin)
         {
             gpv.playerCoffee = gpv.playerCoffee + Time.deltaTime * gpv.playerCoffeeRate;
-            gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthRate;
             gpv.playerHunger = gpv.playerHunger + Time.deltaTime * gpv.playerHungerRate;
             gpv.playerThirst = gpv.playerThirst + Time.deltaTime * gpv.playerThirstRate;
 
-            if (playerInSauna && saunaOn)
+            if (!isNightTime && !playerInSauna)
             {
-                gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
+                gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthRate;
+            }
+
+            else if (isNightTime && !playerInSauna)
+            {
+                gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthRateNight;
             }
         }
-        
+
+        if (playerInSauna && saunaOn)
+        {
+            gpv.playerWarmth = gpv.playerWarmth + Time.deltaTime * gpv.playerWarmthSaunaRate;
+        }
+
         if (!playerInMosquitoField)
         {
             gpv.playerMosquitoes = gpv.playerMosquitoes + Time.deltaTime * gpv.playerMosquitoesDecayRate;
@@ -425,6 +453,11 @@ public class GameplayMechanics : MonoBehaviour
         {
             MetalDudeInteraction();
         }
+
+        if (other.gameObject.tag == "OldDudeTrigger")
+        {
+            playerAtOldDude = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -493,6 +526,11 @@ public class GameplayMechanics : MonoBehaviour
         if (other.gameObject.tag == "ForestEdge")
         {
             playerInForestEdge = false;
+        }
+
+        if (other.gameObject.tag == "OldDudeTrigger")
+        {
+            playerAtOldDude = false;
         }
     }
 

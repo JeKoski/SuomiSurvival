@@ -9,6 +9,7 @@ public class MineScript : MonoBehaviour
 
     [SerializeField] private GameObject mineExplosion;
     [SerializeField] private GameObject mineNotification;
+    [SerializeField] private GameObject mineParent;
     //[SerializeField] private GameObject mineComponents;
 
     [SerializeField] private bool mineTriggered = false;
@@ -65,6 +66,7 @@ public class MineScript : MonoBehaviour
 
                 mineExploded = true;
                 gameObject.SetActive(false);
+                mineParent.SetActive(false);
             }
         }
     }
