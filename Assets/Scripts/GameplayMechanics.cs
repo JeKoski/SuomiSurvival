@@ -94,6 +94,8 @@ public class GameplayMechanics : MonoBehaviour
     [SerializeField] private float inputDelayTimer = 0.0f;
     private bool freezePlayer = false;
     [SerializeField] private float repellentTimer = 30.0f;
+    [SerializeField] private float deathDelay = 2.0f;
+    [SerializeField] private float deathTimer = 0.0f;
 
     void Start()
     {
@@ -220,9 +222,16 @@ public class GameplayMechanics : MonoBehaviour
 
     void PlayerDeath()
     {
-        gameOverScreen.SetActive(true);
-        //Application.Quit();
-        MovePlayerToCabbin();
+        deathTimer = deathTimer + Time.deltaTime;
+        freezePlayer = true;
+
+        if (deathTimer >= deathDelay)
+        {
+            gameOverScreen.SetActive(true);
+            //Application.Quit();
+            MovePlayerToCabbin();
+            freezePlayer = false;
+        }
     }
 
     void PlayerDeathMosquitoes()
