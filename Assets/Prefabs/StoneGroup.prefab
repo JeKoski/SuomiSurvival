@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -819446493
-  m_SortingLayer: 2
+  m_SortingLayerID: 1074358775
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: adb2b9b25b89fc24baf5b540286b562e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,6 +197,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8458669
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &4716747267409037214 stripped
@@ -217,11 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -292,6 +297,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.59213644
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &5248480898209226829 stripped
@@ -307,11 +327,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -382,6 +397,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.59213644
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &5305064946510360845 stripped
@@ -397,11 +427,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -472,6 +497,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.59213644
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &9089551126220745746 stripped
@@ -487,11 +527,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,6 +597,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.110818334
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &7749769713373134617 stripped
@@ -577,11 +627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -652,6 +697,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.19530436
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &2128004507238751611 stripped
@@ -667,11 +727,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 6137406335029021035, guid: 2a7d3b375913218459085da75d7f74c2,
-        type: 3}
-      propertyPath: m_Name
-      value: Moss-stone (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6137406335029021036, guid: 2a7d3b375913218459085da75d7f74c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -742,6 +797,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25153667
       objectReference: {fileID: 0}
+    - target: {fileID: 6137406335029021035, guid: 2a7d3b375913218459085da75d7f74c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Moss-stone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137406335029021037, guid: 2a7d3b375913218459085da75d7f74c2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137406335029021037, guid: 2a7d3b375913218459085da75d7f74c2,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a7d3b375913218459085da75d7f74c2, type: 3}
 --- !u!4 &452630871136054290 stripped
@@ -757,11 +827,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -832,6 +897,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.59213644
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &260587190465094692 stripped
@@ -847,11 +927,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 6137406335029021035, guid: 2a7d3b375913218459085da75d7f74c2,
-        type: 3}
-      propertyPath: m_Name
-      value: Moss-stone (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6137406335029021036, guid: 2a7d3b375913218459085da75d7f74c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -922,6 +997,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.14644717
       objectReference: {fileID: 0}
+    - target: {fileID: 6137406335029021035, guid: 2a7d3b375913218459085da75d7f74c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Moss-stone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137406335029021037, guid: 2a7d3b375913218459085da75d7f74c2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137406335029021037, guid: 2a7d3b375913218459085da75d7f74c2,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a7d3b375913218459085da75d7f74c2, type: 3}
 --- !u!4 &82879053100134841 stripped
@@ -937,11 +1027,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1012,6 +1097,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.288329
       objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
 --- !u!4 &4186104946491596928 stripped
@@ -1027,11 +1127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4777588316431666190}
     m_Modifications:
-    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Stone (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 5787602930413664741, guid: b970299783a6df04598f5e18ca2dd9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1101,6 +1196,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.17382166
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664742, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1074358775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787602930413664740, guid: b970299783a6df04598f5e18ca2dd9fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b970299783a6df04598f5e18ca2dd9fb, type: 3}
