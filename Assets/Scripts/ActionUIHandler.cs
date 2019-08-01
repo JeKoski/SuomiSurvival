@@ -80,11 +80,24 @@ public class ActionUIHandler : MonoBehaviour
     private Vector2 oldDudeUIShow = new Vector2(-600.0f, 0);
     private Vector2 oldDudeUIHide = new Vector2(900.0f, -1500.0f);
 
+    [SerializeField] private GameObject PauseMenu;
+    private Vector2 pauseMenuShow = new Vector2(0, 0);
+    private Vector2 pauseMenuHide = new Vector2(1500.0f, -1500.0f);
+    private bool pauseMenuActive = false;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //MovePauseWindow();
+            if (pauseMenuActive)
+            {
+                HidePauseMenu();
+            }
+
+            else if (!pauseMenuActive)
+            {
+                ShowPauseMenu();
+            }
         }
 
         if (gpm.playerInLogging)
@@ -364,5 +377,19 @@ public class ActionUIHandler : MonoBehaviour
     private void ShowOldDudeUI()
     {
         oldDudeUI.transform.localPosition = oldDudeUIShow;
+    }
+
+    public void HidePauseMenu()
+    {
+        PauseMenu.transform.localPosition = pauseMenuHide;
+        //Time.timeScale = 1;
+        pauseMenuActive = false;
+    }
+
+    private void ShowPauseMenu()
+    {
+        PauseMenu.transform.localPosition = pauseMenuShow;
+        //Time.timeScale = 0;
+        pauseMenuActive = true;
     }
 }

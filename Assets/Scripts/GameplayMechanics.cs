@@ -293,11 +293,12 @@ public class GameplayMechanics : MonoBehaviour
 
     void PlayerStatsUpdate()
     {
+        gpv.playerHunger = gpv.playerHunger + Time.deltaTime * gpv.playerHungerRate;
+        gpv.playerThirst = gpv.playerThirst + Time.deltaTime * gpv.playerThirstRate;
+
         if (!playerInCabbin)
         {
             gpv.playerCoffee = gpv.playerCoffee + Time.deltaTime * gpv.playerCoffeeRate;
-            gpv.playerHunger = gpv.playerHunger + Time.deltaTime * gpv.playerHungerRate;
-            gpv.playerThirst = gpv.playerThirst + Time.deltaTime * gpv.playerThirstRate;
 
             if (!isNightTime && !playerInSauna)
             {
