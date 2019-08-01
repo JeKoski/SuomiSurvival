@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 262a2417daf70024d8e621228cc65077, type: 3}
-  m_Name: Day2Start
+  m_Name: HardcoreDay
   m_EditorClassIdentifier: 
   startingTimeOfDay: 1000
   startingTimeScale: 1
