@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 520654827326142968}
   - component: {fileID: 3644478261641773762}
   - component: {fileID: 3644478261641773761}
-  m_Layer: 31
+  m_Layer: 0
   m_Name: DrunkDriverEWPrefab 1
   m_TagString: DrunkDriver
   m_Icon: {fileID: 0}
