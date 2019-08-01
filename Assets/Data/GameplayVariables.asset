@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f3a92f067eec94b891bd61d4ca76e5, type: 3}
   m_Name: GameplayVariables
   m_EditorClassIdentifier: 
-  timeOfDay: -0.016030971
+  timeOfDay: 1000
   timeScale: 2
   playerHealth: 100
   playerCoffee: 47.704
