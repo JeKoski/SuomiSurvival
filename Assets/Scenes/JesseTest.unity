@@ -65925,6 +65925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4374505720269933439}
   - component: {fileID: 4374505720269933433}
+  - component: {fileID: 4374505720269933434}
   - component: {fileID: 4374505720269933438}
   - component: {fileID: 4374505720269933436}
   - component: {fileID: 4374505720269933437}
@@ -65957,6 +65958,20 @@ MonoBehaviour:
   hungerMeter: {fileID: 4374505720729347438}
   thirstMeter: {fileID: 4374505720318321241}
   timeMeter: {fileID: 4374505721793658943}
+--- !u!114 &4374505720269933434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374505720269933432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7888ae8455c4681499d5a705e908f0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gpv: {fileID: 11400000, guid: 6b66262949fa7f44681203e3b6f98bfe, type: 2}
+  sv: {fileID: 11400000, guid: c8f4d9a5cffad28488263ed69ad6e2e2, type: 2}
 --- !u!114 &4374505720269933436
 MonoBehaviour:
   m_ObjectHideFlags: 0
