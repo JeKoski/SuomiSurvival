@@ -32,7 +32,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Mine
   - 
   - 
   - Player
@@ -50,8 +50,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Stones
+  - ForestEdgeTriggers
   - Text
   - Bear
   - DarkTree
