@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameplayVariables", menuName = "SuomiSurvival/GameplayVariables")]
 public class GameplayVariables : ScriptableObject
 {
+    [Header("Starting Values Reference")]
+    [SerializeField] private StartingValues sv;
+
     [Header("Game World things")]
     [Range(0.0f, 1000.0f)]
     [Tooltip("How much time is left till the day is over")]
@@ -205,4 +208,13 @@ public class GameplayVariables : ScriptableObject
         playerHunger = playerHungerDefault;
         playerThirst = playerThirstDefault;
     }
+
+    public void CleanUpReset()
+    {
+        timeOfDay = timeOfDayDefault;
+        inputsDisabled = false;
+        repellentOn = false;
+    }
+
+    
 }

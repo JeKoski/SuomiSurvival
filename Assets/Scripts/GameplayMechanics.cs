@@ -7,7 +7,7 @@ public class GameplayMechanics : MonoBehaviour
 {
     [Header("References:")]
     [Tooltip("GameplayVariables Data Package")]
-    public GameplayVariables gpv;
+    [SerializeField] private GameplayVariables gpv;
     [SerializeField] private PlayerController pController;
     private GameObject player;
     [SerializeField] private GameObject gameOverScreen;

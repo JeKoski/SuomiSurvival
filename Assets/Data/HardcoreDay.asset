@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262a2417daf70024d8e621228cc65077, type: 3}
+  m_Name: Day2Start
+  m_EditorClassIdentifier: 
+  startingTimeOfDay: 1000
+  startingTimeScale: 1
+  startingMoney: 0
+  startingFirewood: 0
+  startingSausages: 0
+  startingBeer: 0
+  startingCoffeeCups: 0
+  startingRepellent: 0
+  startingFridgeSausages: 0
+  startingFridgeBeer: 0
+  startingFridgeColdBeer: 0
+  startingSausageCost: 10
+  startingBeerCost: 5
+  startingCoffeeCost: 5
+  startingRepellentCost: 100
+  startingPlayerHealth: 20
+  startingPlayerCoffee: 0
+  startingPlayerWarmth: 90
+  startingPlayerMosquitoes: 90
+  startingPlayerHunger: 25
+  startingPlayerThirst: 30
