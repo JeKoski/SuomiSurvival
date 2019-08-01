@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9082985854302696287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -159.56, y: -4.42, z: 27.4375}
+  m_LocalPosition: {x: -159.56, y: -4.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1890959444263676788}
@@ -299,6 +299,7 @@ MonoBehaviour:
   gpv: {fileID: 11400000, guid: 6b66262949fa7f44681203e3b6f98bfe, type: 2}
   pController: {fileID: 5843152319440382081}
   gameOverScreen: {fileID: 0}
+  dayOverScreen: {fileID: 0}
   bearPrefab: {fileID: 5721304364753824538, guid: d74955566524f564796397ff4b369399,
     type: 3}
   bearSpawnNW: {fileID: 3235471003039168351}
@@ -307,6 +308,9 @@ MonoBehaviour:
   bearSpawnSE: {fileID: 7111706592560787360}
   metalDude: {fileID: 5721304364753824538, guid: 77649e97e663c74439d2bc5594f618cd,
     type: 3}
+  campfireFlame: {fileID: 0}
+  repellentBuff: {fileID: 0}
+  coldBeerBuff: {fileID: 0}
   cabbinRoof: {fileID: 0}
   playerStoreMarker: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
@@ -324,6 +328,9 @@ MonoBehaviour:
   playerInFireplace: 0
   playerDead: 0
   playerInForestEdge: 0
+  metalDudeTriggered: 0
+  playerAtOldDude: 0
+  isNightTime: 0
   firewoodRequiredForSauna: 3
   saunaOnProgress: 0
   saunaOnProgressRate: 20
@@ -338,6 +345,7 @@ MonoBehaviour:
   sausageProgressRate: 10
   bearSpawnTimer: 0
   bearSpawnRate: 3
+  coldBeerRemaining: 0
   sprintDrainRate: 8
   nightTimeOverlay: {fileID: 5153843159646854545}
   nightTimeSprite: {fileID: 9149473006836121634}
@@ -350,6 +358,9 @@ MonoBehaviour:
   nightTimeColorBlendTime: 2
   inputDelay: 1
   inputDelayTimer: 0
+  repellentTimer: 30
+  deathDelay: 2
+  deathTimer: 0
 --- !u!114 &9210901900165785441
 MonoBehaviour:
   m_ObjectHideFlags: 0

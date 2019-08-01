@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437966586753325277}
   - component: {fileID: 5437966586753325090}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: MineNotificationBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5437966586886134197}
   - component: {fileID: 5437966586886134202}
   - component: {fileID: 5437966586886134203}
-  m_Layer: 29
+  m_Layer: 9
   m_Name: MineClickText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 5437966587430589891}
   - component: {fileID: 5437966587430589890}
   - component: {fileID: 5437966587430589949}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: MineComponents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8774727207198531463}
   - component: {fileID: 5615346292782696913}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: MineMoundFunctional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
