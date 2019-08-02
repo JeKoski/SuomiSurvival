@@ -111,7 +111,7 @@ public class GameplayMechanics : MonoBehaviour
         repellentBuff.SetActive(false);
         coldBeerBuff.SetActive(false);
         MovePlayerToSpawn();
-        gpv.ResetAll();
+        //gpv.ResetAll();
 
         nightTimeColor.a = nightTimeGradMax;
     }
