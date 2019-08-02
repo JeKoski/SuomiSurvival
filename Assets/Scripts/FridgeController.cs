@@ -62,7 +62,7 @@ public class FridgeController : MonoBehaviour
         {
             gpv.fridgeWarmBeerCount--;
 
-            gpv.playerThirst = gpv.playerThirst + gpv.warmBeerRestoreAmount;
+            gpv.playerBeer++;
         }
 
         UpdateFridgeCounts();

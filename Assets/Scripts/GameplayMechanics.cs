@@ -146,7 +146,7 @@ public class GameplayMechanics : MonoBehaviour
 
     void GameTimeUpdate()
     {
-        if (gpv.timeOfDay > 0 && !playerDead)
+        if (gpv.timeOfDay > 0)
         {
             gpv.timeOfDay = gpv.timeOfDay - Time.deltaTime * gpv.timeScale;
         }
