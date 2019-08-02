@@ -40783,6 +40783,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8914009636224714425, guid: a2a6e15f00f98ca4186a54b7940cf23e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4374505720269933438}
+    - target: {fileID: 8914009636224714425, guid: a2a6e15f00f98ca4186a54b7940cf23e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HidePauseMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8914009637298238835, guid: a2a6e15f00f98ca4186a54b7940cf23e,
         type: 3}
       propertyPath: m_textInfo.characterCount
