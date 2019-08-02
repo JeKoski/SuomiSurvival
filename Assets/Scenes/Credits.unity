@@ -472,7 +472,7 @@ MonoBehaviour:
     Markkanen\r\n\r\n\r\n\r\nLevel Design\r\n\r\nJesse Koski\r\nJoonas Junnila\r\nSami
     Piekiainen\r\n\r\n\r\n\r\nLead Programmer\r\n\r\nJesse Koski\r\n\r\n\r\n\r\nScripting\r\n\r\nJaakko
     Rautio\r\nJesse Koski\r\nSami Piekiainen\r\n\r\n\r\n\r\nTools used\r\n\r\nUnity\r\nMicrosoft
-    Visual Studio\r\nAdobe Photoshop\r\nGitHub\r\nSlack\r\nTrello\r\n\r\n\r\n\r\nSpecial
+    Visual Studio\r\nAdobe Photoshop\r\nGitHub\r\nSlack\r\nTrello\r\nPaint\n\r\n\r\n\r\nSpecial
     thanks\r\n\r\nAntti Takalo\r\nCity of Oulu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 499
+  m_firstOverflowCharacterIndex: 503
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -542,12 +542,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 558203785}
-    characterCount: 545
+    characterCount: 551
     spriteCount: 0
-    spaceCount: 101
-    wordCount: 67
+    spaceCount: 102
+    wordCount: 68
     linkCount: 0
-    lineCount: 73
+    lineCount: 74
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
