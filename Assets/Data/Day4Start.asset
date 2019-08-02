@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTimeOfDay: 1000
   startingTimeScale: 2
-  startingWarmthRate: -5
-  startingWarmthRateNight: -10
+  startingWarmthRate: -2
+  startingWarmthRateNight: -4
   startingMoney: 0
   startingFirewood: 0
   startingSausages: 0

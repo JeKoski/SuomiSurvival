@@ -24,6 +24,7 @@ public class ResourceButtonsScript : MonoBehaviour
         {
             gpv.playerBeer--;
             gpv.playerThirst = gpv.playerThirst + gpv.warmBeerRestoreAmount;
+            gpv.playerWarmth = gpv.playerWarmth + gpv.warmBeerWarmthAmount;
         }
     }
 

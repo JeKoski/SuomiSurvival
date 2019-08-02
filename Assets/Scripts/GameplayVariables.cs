@@ -169,6 +169,8 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("How much thirst a cold beer restores")]
     public float coldBeerRestoreAmount = 50.0f;
 
+    public float warmBeerWarmthAmount = 20.0f;
+
     [Space]
 
     [Header("Misc.")]

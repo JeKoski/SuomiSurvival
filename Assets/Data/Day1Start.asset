@@ -15,7 +15,7 @@ MonoBehaviour:
   startingTimeOfDay: 600
   startingTimeScale: 2
   startingWarmthRate: 0.5
-  startingWarmthRateNight: -5
+  startingWarmthRateNight: -3
   startingMoney: 20
   startingFirewood: 0
   startingSausages: 0
