@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameplayVariables", menuName = "SuomiSurvival/GameplayVariables")]
 public class GameplayVariables : ScriptableObject
 {
-    [Header("Starting Values Reference")]
-    [SerializeField] private StartingValues sv;
+    //[Header("Starting Values Reference")]
+    //[SerializeField] private StartingValues sv;
 
     [Header("Game World things")]
     [Range(0.0f, 1000.0f)]

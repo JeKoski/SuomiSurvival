@@ -9395,11 +9395,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -9424,6 +9419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -14951,11 +14951,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -14980,6 +14975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -15050,11 +15050,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -15079,6 +15074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -21344,11 +21344,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -21373,6 +21368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -34578,6 +34578,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1900806991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1900806992}
+  m_Layer: 16
+  m_Name: SaunaEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1900806992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900806991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 73146829870498911}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1906208644
 GameObject:
   m_ObjectHideFlags: 0
@@ -36495,11 +36525,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -36524,6 +36549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -37472,11 +37502,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -37501,6 +37526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -39567,11 +39597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
-        type: 3}
-      propertyPath: mineDelay
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 5437966586886134197, guid: 075e728acb60f924ca5a172c7988df72,
         type: 3}
       propertyPath: m_Mesh
@@ -39596,6 +39621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437966587430589949, guid: 075e728acb60f924ca5a172c7988df72,
+        type: 3}
+      propertyPath: mineDelay
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075e728acb60f924ca5a172c7988df72, type: 3}
@@ -58618,6 +58648,7 @@ Transform:
   - {fileID: 73146828652256237}
   - {fileID: 1139328527}
   - {fileID: 73146829531771204}
+  - {fileID: 1900806992}
   m_Father: {fileID: 4374505722297832405}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74746,6 +74777,8 @@ MonoBehaviour:
   repellentBuff: {fileID: 660382680}
   coldBeerBuff: {fileID: 953138131}
   cabbinRoof: {fileID: 6100492031668327688}
+  cabbinRoofOldDude: {fileID: 285585322}
+  saunaEffects: {fileID: 1900806991}
   playerStoreMarker: {fileID: 4374505722231015306}
   playerSpawnPoint: {fileID: 4374505721277542846}
   playerCabbinPoint: {fileID: 4374505721356248404}

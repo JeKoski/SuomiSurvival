@@ -25,6 +25,8 @@ public class GameplayMechanics : MonoBehaviour
 
     [Tooltip("GameObject to disable when player walks into the cabbin")]
     public GameObject cabbinRoof;
+    public GameObject cabbinRoofOldDude;
+    [SerializeField] private GameObject saunaEffects;
     public GameObject playerStoreMarker;
     public static Vector2 playerStoreLocation;
     private GameObject playerInStoreTrigger;
@@ -110,8 +112,9 @@ public class GameplayMechanics : MonoBehaviour
         playerInStoreTrigger.SetActive(false);
         repellentBuff.SetActive(false);
         coldBeerBuff.SetActive(false);
+        saunaEffects.SetActive(false);
         MovePlayerToSpawn();
-        gpv.ResetAll();
+        //gpv.ResetAll();
 
         nightTimeColor.a = nightTimeGradMax;
     }
@@ -409,6 +412,7 @@ public class GameplayMechanics : MonoBehaviour
         {
             Debug.Log("You've entered the Cabbin, disabling roof.");
             cabbinRoof.SetActive(false);
+            cabbinRoofOldDude.SetActive(false);
             playerInCabbin = true;
         }
 
@@ -595,6 +599,7 @@ public class GameplayMechanics : MonoBehaviour
             if (saunaOnProgress >= 100.0f)
             {
                 saunaOn = true;
+                saunaEffects.SetActive(true);
                 saunaOnProgress = 0.0f;
                 gpv.playerFirewood = gpv.playerFirewood - firewoodRequiredForSauna;
             }

@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262a2417daf70024d8e621228cc65077, type: 3}
   m_Name: Day1Start
   m_EditorClassIdentifier: 
-  startingTimeOfDay: 1000
+  startingTimeOfDay: 600
   startingTimeScale: 2
   startingMoney: 20
   startingFirewood: 0
   startingSausages: 0
   startingBeer: 0
-  startingCoffeeCups: 0
+  startingCoffeeCups: 5
   startingRepellent: 0
   startingFridgeSausages: 0
   startingFridgeBeer: 0
   startingFridgeColdBeer: 0
-  startingSausageCost: 3
-  startingBeerCost: 3
-  startingCoffeeCost: 3
-  startingRepellentCost: 3
+  startingSausageCost: 2.5
+  startingBeerCost: 1.5
+  startingCoffeeCost: 2
+  startingRepellentCost: 7
   startingPlayerHealth: 100
-  startingPlayerCoffee: 100
+  startingPlayerCoffee: 0
   startingPlayerWarmth: 0
   startingPlayerMosquitoes: 0
   startingPlayerHunger: 100
