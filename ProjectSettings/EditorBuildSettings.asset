@@ -30,12 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: d1bd3a3891e13004bb0696d74523e2d1
   - enabled: 1
-    path: Assets/Scenes/IntroDay2.unity
-    guid: 002b2487c9a27a24388fc19e9a023217
+    path: Assets/Scenes/Day 2.unity
+    guid: 00f82666795c1cb4ca716b5a6d338308
   - enabled: 1
-    path: Assets/Scenes/IntroDay3.unity
-    guid: 8dd51ec242e25cd4a950f5f29deaa34a
+    path: Assets/Scenes/Day 3.unity
+    guid: 60fd14cf7f9d0c9429fdbb00efd22eec
   - enabled: 1
-    path: Assets/Scenes/IntroDay4.unity
-    guid: 58d90314c9a12ed4ab4c8d2200e425e8
+    path: Assets/Scenes/Day 4.unity
+    guid: 7aef6a53901393740ba113e54d78455b
   m_configObjects: {}

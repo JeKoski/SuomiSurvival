@@ -9,6 +9,11 @@ public class StartingValues : ScriptableObject
     [Range(0.0f, 1000.0f)]
     public float startingTimeOfDay = 1000.0f;
     public float startingTimeScale = 2.0f;
+    
+    [Space]
+
+    public float startingWarmthRate = 0.5f;
+    public float startingWarmthRateNight = -5.0f;
 
     [Space]
 

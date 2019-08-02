@@ -97723,7 +97723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gpv: {fileID: 11400000, guid: 6b66262949fa7f44681203e3b6f98bfe, type: 2}
-  sv: {fileID: 11400000, guid: d1a30c6dea2b1eb44928b5aca679939d, type: 2}
+  sv: {fileID: 11400000, guid: ced38f2d1331f7f4c844b274a9833a74, type: 2}
 --- !u!114 &4374505720269933436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101612,7 +101612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadSceneByName: 1
-  sceneName: Day 1
+  sceneName: Day 2
   levelToLoad: 0
 --- !u!1 &4374505721793658937
 GameObject:
@@ -105334,7 +105334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadSceneByName: 1
-  sceneName: IntroDay2
+  sceneName: IntroDay3
   levelToLoad: 0
 --- !u!1 &9019652320981521323
 GameObject:
