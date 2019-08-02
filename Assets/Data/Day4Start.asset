@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 262a2417daf70024d8e621228cc65077, type: 3}
-  m_Name: Day1Start
+  m_Name: Day4Start
   m_EditorClassIdentifier: 
-  startingTimeOfDay: 600
+  startingTimeOfDay: 1000
   startingTimeScale: 2
-  startingWarmthRate: 0.5
-  startingWarmthRateNight: -5
-  startingMoney: 20
+  startingWarmthRate: -5
+  startingWarmthRateNight: -10
+  startingMoney: 0
   startingFirewood: 0
   startingSausages: 0
   startingBeer: 0
-  startingCoffeeCups: 5
+  startingCoffeeCups: 0
   startingRepellent: 0
   startingFridgeSausages: 0
   startingFridgeBeer: 0
   startingFridgeColdBeer: 0
   startingSausageCost: 2.5
-  startingBeerCost: 1.5
+  startingBeerCost: 3
   startingCoffeeCost: 1
   startingRepellentCost: 7
-  startingPlayerHealth: 100
+  startingPlayerHealth: 60
   startingPlayerCoffee: 0
   startingPlayerWarmth: 0
-  startingPlayerMosquitoes: 0
-  startingPlayerHunger: 100
-  startingPlayerThirst: 100
+  startingPlayerMosquitoes: 50
+  startingPlayerHunger: 50
+  startingPlayerThirst: 50

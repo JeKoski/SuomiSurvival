@@ -501,6 +501,7 @@ public class GameplayMechanics : MonoBehaviour
         {
             Debug.Log("You've exited the Cabbin, enabling roof.");
             cabbinRoof.SetActive(true);
+            cabbinRoofOldDude.SetActive(true);
             playerInCabbin = false;
         }
 

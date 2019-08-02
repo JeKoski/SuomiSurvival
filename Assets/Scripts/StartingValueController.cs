@@ -19,7 +19,10 @@ public class StartingValueController : MonoBehaviour
         gpv.timeOfDay = sv.startingTimeOfDay;
         gpv.timeScale = sv.startingTimeScale;
 
-        gpv.playerMoney = sv.startingMoney;
+        gpv.playerWarmthRate = sv.startingWarmthRate;
+        gpv.playerWarmthRateNight = sv.startingWarmthRateNight;
+
+    gpv.playerMoney = sv.startingMoney;
         gpv.playerFirewood = sv.startingFirewood;
         gpv.playerSausages = sv.startingSausages;
         gpv.playerBeer = sv.startingBeer;
