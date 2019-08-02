@@ -6,36 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Day 1.unity
-    guid: 3924e7e599846704ba6e1913929d1ec2
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5d339de479d1f2e44b75c558d3ab8f80
-  - enabled: 1
-    path: Assets/Scenes/JesseTest.unity
-    guid: 2bde66ae5c5d36d4bab40ff8568ac532
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: ba4c0b6d3eac1fd4ea51cf95ffb09787
   - enabled: 1
-    path: Assets/Scenes/JaakkiTestScene.unity
-    guid: 4788161a91b47bf429232a3a18ed2b7c
-  - enabled: 1
-    path: Assets/Scenes/Day 1.unity
-    guid: 3924e7e599846704ba6e1913929d1ec2
+    path: Assets/Scenes/IntroScene.unity
+    guid: d1bd3a3891e13004bb0696d74523e2d1
   - enabled: 1
     path: Assets/Scenes/GameplayTutorial.unity
     guid: 5cbed1d44ab8dd34f9e03340203297d0
   - enabled: 1
-    path: Assets/Scenes/IntroScene.unity
-    guid: d1bd3a3891e13004bb0696d74523e2d1
+    path: Assets/Scenes/Day 1.unity
+    guid: 3924e7e599846704ba6e1913929d1ec2
+  - enabled: 1
+    path: Assets/Scenes/IntroDay2.unity
+    guid: 002b2487c9a27a24388fc19e9a023217
   - enabled: 1
     path: Assets/Scenes/Day 2.unity
     guid: 00f82666795c1cb4ca716b5a6d338308
   - enabled: 1
+    path: Assets/Scenes/IntroDay3.unity
+    guid: 8dd51ec242e25cd4a950f5f29deaa34a
+  - enabled: 1
     path: Assets/Scenes/Day 3.unity
     guid: 60fd14cf7f9d0c9429fdbb00efd22eec
   - enabled: 1
+    path: Assets/Scenes/IntroDay4.unity
+    guid: 58d90314c9a12ed4ab4c8d2200e425e8
+  - enabled: 1
     path: Assets/Scenes/Day 4.unity
     guid: 7aef6a53901393740ba113e54d78455b
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 1182a8eebed4be14a8cf8eaf0f4e8f4f
   m_configObjects: {}

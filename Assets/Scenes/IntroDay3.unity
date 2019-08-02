@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadSceneByName: 1
-  sceneName: GameplayTutorial
+  sceneName: Day 3
   levelToLoad: 0
 --- !u!1 &1550316394
 GameObject:
