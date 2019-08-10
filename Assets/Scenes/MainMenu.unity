@@ -149,7 +149,7 @@ RectTransform:
   m_GameObject: {fileID: 52299482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0924159, y: 1.0924159, z: 1.0924159}
+  m_LocalScale: {x: 1.8919425, y: 1.8919425, z: 1.8919425}
   m_Children:
   - {fileID: 819993214}
   m_Father: {fileID: 1728282961}
@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9, y: -0.4}
+  m_AnchoredPosition: {x: -12.7, y: 58.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52299484
@@ -302,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2.1000004}
+  m_AnchoredPosition: {x: 0.19999695, y: -1.3999996}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &79107042
@@ -454,7 +454,7 @@ RectTransform:
   m_GameObject: {fileID: 229339056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0914, y: 1.0914, z: 1.0914}
+  m_LocalScale: {x: 1.579365, y: 1.579365, z: 1.579365}
   m_Children:
   - {fileID: 79107041}
   m_Father: {fileID: 1728282961}
@@ -462,7 +462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.6, y: 16.5}
+  m_AnchoredPosition: {x: -13.3, y: 55.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229339058
@@ -1052,7 +1052,7 @@ RectTransform:
   m_GameObject: {fileID: 998502457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0441, y: 1.0441, z: 1.0441}
   m_Children:
   - {fileID: 357858840}
   - {fileID: 1728282961}
@@ -1061,7 +1061,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7, y: -92}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998502459
@@ -1086,7 +1086,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 4a1dfd01ff70f0942a358d11c6c7818f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1230,7 +1230,7 @@ RectTransform:
   m_GameObject: {fileID: 1225580131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalScale: {x: 1.89739, y: 1.89739, z: 1.89739}
   m_Children:
   - {fileID: 516163295}
   m_Father: {fileID: 1728282961}
@@ -1238,7 +1238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.5, y: -15}
+  m_AnchoredPosition: {x: -11.5, y: 68.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225580133
@@ -1376,14 +1376,14 @@ RectTransform:
   m_GameObject: {fileID: 1262405922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.109298, y: 4.109298, z: 4.109298}
+  m_LocalScale: {x: 3.9449263, y: 3.9449263, z: 3.9449263}
   m_Children: []
   m_Father: {fileID: 357858840}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -39}
+  m_AnchoredPosition: {x: 8, y: 10}
   m_SizeDelta: {x: 190, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262405924
@@ -1543,7 +1543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 110}
+  m_AnchoredPosition: {x: 3, y: 273}
   m_SizeDelta: {x: 180, y: 133.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728282962
