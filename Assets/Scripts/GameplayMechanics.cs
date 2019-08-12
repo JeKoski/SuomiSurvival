@@ -288,7 +288,7 @@ public class GameplayMechanics : MonoBehaviour
 
     void SprintDrain()
     {
-        if (pController.playerSprinting)
+        if (pController.playerSprinting && pController.movementSpeed != 0)
         {
             gpv.playerCoffee = gpv.playerCoffee - Time.deltaTime * sprintDrainRate;
         }

@@ -87,7 +87,7 @@ public class ActionUIHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
             if (pauseMenuActive)
             {
