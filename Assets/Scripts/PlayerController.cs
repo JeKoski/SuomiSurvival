@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && gpv.playerCoffee > 0)
+        if (Input.GetButton("Sprint") && gpv.playerCoffee > 0)
         {
             sprintMult = sprintOnMult;
             playerSprinting = true;

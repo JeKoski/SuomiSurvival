@@ -559,7 +559,7 @@ public class GameplayMechanics : MonoBehaviour
 
     private void BuildCampfire()
     {
-        if (playerInFireplace && !campfireBuilt && Input.GetKey(KeyCode.E) && gpv.playerFirewood >= firewoodRequiredForCampfire)
+        if (playerInFireplace && !campfireBuilt && gpv.playerFirewood >= firewoodRequiredForCampfire && Input.GetButton("Interact"))
         {
             campfireBuildProgress = campfireBuildProgress + (Time.deltaTime * campfireBuildProgressRate);
 
@@ -574,7 +574,7 @@ public class GameplayMechanics : MonoBehaviour
 
     private void ChopWood()
     {
-        if (playerInLogging && Input.GetKey(KeyCode.E))
+        if (playerInLogging && Input.GetButton("Interact"))
         {
             chopWoodProgress = chopWoodProgress + (Time.deltaTime * chopWoodProgressRate);
 
@@ -593,7 +593,7 @@ public class GameplayMechanics : MonoBehaviour
 
     private void FireUpSauna()
     {
-        if (playerInSauna && !saunaOn && Input.GetKey(KeyCode.E) && gpv.playerFirewood >= firewoodRequiredForSauna)
+        if (playerInSauna && !saunaOn && Input.GetButton("Interact") && gpv.playerFirewood >= firewoodRequiredForSauna)
         {
             saunaOnProgress = saunaOnProgress + (Time.deltaTime * saunaOnProgressRate);
 
@@ -609,7 +609,7 @@ public class GameplayMechanics : MonoBehaviour
 
     private void BrewCoffee()
     {
-        if (playerInTable && Input.GetKey(KeyCode.E) && gpv.playerCoffeeCups > 0)
+        if (playerInTable && Input.GetButton("Interact") && gpv.playerCoffeeCups > 0)
         {
             coffeeBrewProgress = coffeeBrewProgress + (Time.deltaTime * coffeeBrewProgressRate);
 
@@ -629,7 +629,7 @@ public class GameplayMechanics : MonoBehaviour
 
     private void cookSausage()
     {
-        if (playerInFireplace && campfireBuilt && Input.GetKey(KeyCode.E) && gpv.playerSausages > 0)
+        if (playerInFireplace && campfireBuilt && Input.GetButton("Interact") && gpv.playerSausages > 0)
         {
             sausageProgress = sausageProgress + (Time.deltaTime * sausageProgressRate);
 
