@@ -180,6 +180,8 @@ public class GameplayVariables : ScriptableObject
     [Tooltip("Repellent effect check")]
     public bool repellentOn;
 
+    public bool godMode = false;
+
 
     public void ResetAll()
     {

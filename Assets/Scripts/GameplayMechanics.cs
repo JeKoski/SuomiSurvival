@@ -142,6 +142,7 @@ public class GameplayMechanics : MonoBehaviour
         // Misc
         BearSpawner();
         RepellentEffect();
+        GodModeToggle();
     }
 
     void GameTimeUpdate()
@@ -205,37 +206,37 @@ public class GameplayMechanics : MonoBehaviour
 
     void CheckIfPlayerIsDead()
     {
-        if (gpv.playerHealth <= 0)
+        if (gpv.playerHealth <= 0 && !gpv.godMode)
         {
             playerDead = true;
             PlayerDeath();
         }
 
-        if (gpv.playerMosquitoes == 100.0f)
+        if (gpv.playerMosquitoes == 100.0f && !gpv.godMode)
         {
             playerDead = true;
             PlayerDeathMosquitoes();
         }
 
-        if (gpv.playerHunger <= 0)
+        if (gpv.playerHunger <= 0 && !gpv.godMode)
         {
             playerDead = true;
             PlayerDeathHunger();
         }
 
-        if (gpv.playerThirst <= 0)
+        if (gpv.playerThirst <= 0 && !gpv.godMode)
         {
             playerDead = true;
             PlayerDeathThirst();
         }
 
-        if (gpv.playerWarmth <= -100.0f)
+        if (gpv.playerWarmth <= -100.0f && !gpv.godMode)
         {
             playerDead = true;
             PlayerDeathCold();
         }
 
-        if (gpv.playerWarmth >= 100.0f)
+        if (gpv.playerWarmth >= 100.0f && !gpv.godMode)
         {
             playerDead = true;
             PlayerDeathHeat();
@@ -559,7 +560,8 @@ public class GameplayMechanics : MonoBehaviour
 
     private void BuildCampfire()
     {
-        if (playerInFireplace && !campfireBuilt && gpv.playerFirewood >= firewoodRequiredForCampfire && Input.GetButton("Interact"))
+        if (playerInFireplace && !campfireBuilt && gpv.playerFirewood >= firewoodRequiredForCampfire && Input.GetButton("Interact") 
+            || playerInFireplace && !campfireBuilt && Input.GetButton("Interact") && gpv.godMode)
         {
             campfireBuildProgress = campfireBuildProgress + (Time.deltaTime * campfireBuildProgressRate);
 
@@ -593,7 +595,8 @@ public class GameplayMechanics : MonoBehaviour
 
     private void FireUpSauna()
     {
-        if (playerInSauna && !saunaOn && Input.GetButton("Interact") && gpv.playerFirewood >= firewoodRequiredForSauna)
+        if (playerInSauna && !saunaOn && Input.GetButton("Interact") && gpv.playerFirewood >= firewoodRequiredForSauna 
+            || playerInSauna && !saunaOn && Input.GetButton("Interact") && gpv.godMode)
         {
             saunaOnProgress = saunaOnProgress + (Time.deltaTime * saunaOnProgressRate);
 
@@ -609,7 +612,8 @@ public class GameplayMechanics : MonoBehaviour
 
     private void BrewCoffee()
     {
-        if (playerInTable && Input.GetButton("Interact") && gpv.playerCoffeeCups > 0)
+        if (playerInTable && Input.GetButton("Interact") && gpv.playerCoffeeCups > 0 
+            || playerInTable && Input.GetButton("Interact") && gpv.godMode)
         {
             coffeeBrewProgress = coffeeBrewProgress + (Time.deltaTime * coffeeBrewProgressRate);
 
@@ -629,7 +633,8 @@ public class GameplayMechanics : MonoBehaviour
 
     private void cookSausage()
     {
-        if (playerInFireplace && campfireBuilt && Input.GetButton("Interact") && gpv.playerSausages > 0)
+        if (playerInFireplace && campfireBuilt && Input.GetButton("Interact") && gpv.playerSausages > 0 
+            || playerInFireplace && campfireBuilt && Input.GetButton("Interact") && gpv.godMode)
         {
             sausageProgress = sausageProgress + (Time.deltaTime * sausageProgressRate);
 
@@ -768,4 +773,31 @@ public class GameplayMechanics : MonoBehaviour
         coldBeerBuff.SetActive(true);
         coldBeerRemaining = 6;
     }
+
+    private void GodModeToggle()
+    {
+        if (Input.GetButton("Sprint"))
+        {
+            if (Input.GetButton("Interact"))
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    if (!gpv.godMode)
+                    {
+                        gpv.godMode = true;
+                    }
+
+                    else if (gpv.godMode)
+                    {
+                        gpv.godMode = false;
+                    }
+                }
+            }
+        }
+    }
+
+    //    private void GodModeEffects()
+    //    {
+
+    //    }
 }

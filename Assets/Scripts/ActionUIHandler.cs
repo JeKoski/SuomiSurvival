@@ -72,8 +72,8 @@ public class ActionUIHandler : MonoBehaviour
     private bool cookSausageUIIsAway = true;
 
     [SerializeField] private GameObject metalDudePopupUI;
-    private Vector2 metalDudePopupUIShow = new Vector2(-480.0f, 87.5f);
-    private Vector2 metalDudePopupUIHide = new Vector2(-480.0f, -1500.0f);
+    private Vector2 metalDudePopupUIShow = new Vector2(470.0f, -455.0f);
+    private Vector2 metalDudePopupUIHide = new Vector2(-480.0f, -2000.0f);
     private bool metalDudePopupUIIsAway = true;
 
     [SerializeField] private GameObject oldDudeUI;
